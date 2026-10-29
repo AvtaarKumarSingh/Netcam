@@ -67,7 +67,7 @@ export function VehicleDetailModal({
     const exportData = {
       dossier_type: "VEHICLE_TRAJECTORY_INVESTIGATION_DOSSIER",
       generated_at: new Date().toISOString(),
-      platform: "DRISHTI City-Wide Visual Intelligence (SIH 2026 - Problem 26127)",
+      platform: "NETCAM City-Wide Visual Intelligence (SIH 2026 - Problem 26127)",
       authority: "Bharat Electronics Limited / Smart City Law Enforcement",
       vehicle_summary: {
         license_plate: plateNumber || "UNPLATED",
@@ -101,7 +101,7 @@ export function VehicleDetailModal({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `DRISHTI_DOSSIER_${targetId}_${Date.now()}.json`;
+    a.download = `NETCAM_DOSSIER_${targetId}_${Date.now()}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -126,7 +126,7 @@ export function VehicleDetailModal({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `DRISHTI_TRAJECTORY_${targetId}_${Date.now()}.csv`;
+    a.download = `NETCAM_TRAJECTORY_${targetId}_${Date.now()}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -295,7 +295,7 @@ export function VehicleDetailModal({
               letterSpacing: "0.04em",
             }}
           >
-            <FileText size={14} style={{ color: "var(--drishti-blue, #0284c7)" }} />
+            <FileText size={14} style={{ color: "var(--NETCAM-blue, #0284c7)" }} />
             <span>OFFICIAL VEHICLE REPORT</span>
           </div>
 
@@ -353,7 +353,7 @@ export function VehicleDetailModal({
 
             <div className="metric-quad-cell">
               <span className="quad-label">Avg Corridor Speed</span>
-              <strong className="quad-value font-mono" style={{ color: "var(--drishti-blue, #0284c7)" }}>
+              <strong className="quad-value font-mono" style={{ color: "var(--NETCAM-blue, #0284c7)" }}>
                 {averageSpeed ? `${averageSpeed} km/h` : "N/A"}
               </strong>
             </div>
@@ -386,7 +386,7 @@ export function VehicleDetailModal({
               <div className="quad-label">Transit Duration</div>
               <div
                 className="font-mono"
-                style={{ fontSize: "13px", fontWeight: 700, color: "var(--drishti-blue, #0284c7)" }}
+                style={{ fontSize: "13px", fontWeight: 700, color: "var(--NETCAM-blue, #0284c7)" }}
               >
                 {vehicle.first_seen && vehicle.last_seen
                   ? formatTime(Math.max(0, vehicle.last_seen - vehicle.first_seen))
@@ -498,7 +498,7 @@ export function VehicleDetailModal({
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          color: "var(--drishti-blue, #0284c7)",
+                          color: "var(--NETCAM-blue, #0284c7)",
                           margin: "-4px 0",
                         }}
                       >

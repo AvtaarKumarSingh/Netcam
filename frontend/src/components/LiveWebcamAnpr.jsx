@@ -686,7 +686,7 @@ export function LiveWebcamAnpr({
 
     const a = document.createElement("a");
     a.href = snapCanvas.toDataURL("image/jpeg", 0.95);
-    a.download = `DRISHTI_Live_ANPR_Scan_${Date.now()}.jpg`;
+    a.download = `NETCAM_Live_ANPR_Scan_${Date.now()}.jpg`;
     a.click();
     showToast("Snapshot downloaded successfully!");
   };
@@ -735,7 +735,7 @@ export function LiveWebcamAnpr({
             </span>
             <input
               type="text"
-              placeholder="e.g. https://drishti-production.up.railway.app"
+              placeholder="e.g. https://NETCAM-production.up.railway.app"
               value={customBackendUrl}
               onChange={(e) => setCustomBackendUrl(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleConnectBackend()}
@@ -769,7 +769,7 @@ export function LiveWebcamAnpr({
             >
               {isConnectingBackend ? "Connecting..." : "Connect Railway"}
             </button>
-            {Boolean(typeof window !== "undefined" && localStorage.getItem("DRISHTI_BACKEND_URL")) && (
+            {Boolean(typeof window !== "undefined" && localStorage.getItem("NETCAM_BACKEND_URL")) && (
               <button
                 type="button"
                 onClick={handleResetBackend}
@@ -1217,7 +1217,7 @@ export function LiveWebcamAnpr({
                     CRITICAL ALERT: BLACKLISTED / WANTED VEHICLE DETECTED!
                   </div>
                   <div className="text-xs opacity-90">
-                    {scanResult.blacklist_alert?.reason || "Flagged in DRISHTI Surveillance Watchlist"}
+                    {scanResult.blacklist_alert?.reason || "Flagged in NETCAM Surveillance Watchlist"}
                   </div>
                 </div>
               </div>
@@ -1328,7 +1328,7 @@ export function LiveWebcamAnpr({
                     }}
                   >
                     <Search size={14} />
-                    <span>Search in DRISHTI</span>
+                    <span>Search in NETCAM</span>
                   </button>
 
                   <button
@@ -1362,7 +1362,7 @@ export function LiveWebcamAnpr({
                 <h4>Awaiting Visual Target in Camera</h4>
                 <p>
                   Point your laptop camera at a license plate, paper, sign, or phone screen.
-                  DRISHTI will automatically lock on and read the text with 99.8% precision.
+                  NETCAM will automatically lock on and read the text with 99.8% precision.
                 </p>
                 <div className="hero-standby-tips">
                   <div className="tips-title">TIPS FOR INSTANT DETECTION:</div>

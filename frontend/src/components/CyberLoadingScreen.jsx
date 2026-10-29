@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DrishtiEyeLogo } from "./DrishtiEyeLogo";
+import { NETCAMEyeLogo } from "./NETCAMEyeLogo";
 
 const LOADING_STAGES = [
   "Initializing system...",
@@ -49,17 +49,17 @@ export function CyberLoadingScreen({ isExiting = false, onFinished }) {
       </div>
 
       <div className="cyber-loading-content">
-        {/* DRISHTI EYE LOGO */}
+        {/* NETCAM EYE LOGO */}
         <div className="cyber-eye-hero-container">
           <div className="cyber-eye-halo-ring"></div>
           <div className="cyber-eye-halo-pulse"></div>
-          <DrishtiEyeLogo size={150} animated={true} className="loading-hero-eye" />
+          <NETCAMEyeLogo size={150} animated={true} className="loading-hero-eye" />
         </div>
 
         {/* BRAND IDENTITY */}
         <div className="cyber-brand-hero">
           <h1 className="cyber-hero-title">
-            DRISHTI
+            NETCAM
           </h1>
 
           <div className="cyber-hero-subtitle">

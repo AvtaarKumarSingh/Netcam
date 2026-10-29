@@ -1,9 +1,9 @@
-# DRISHTI — City-Wide Visual Intelligence for Vehicle Tracking & Mobility Analysis
+# NETCAM — City-Wide Visual Intelligence for Vehicle Tracking & Mobility Analysis
 
 **Smart India Hackathon (SIH) 2026 — Problem Statement 26127**  
 *City-Wide AI Engine for Multi-Camera ANPR Trajectory Tracking and Urban Traffic Analytics*
 
-DRISHTI is an enterprise-grade visual intelligence platform delivering multi-camera vehicle detection, high-accuracy automatic number-plate recognition (ANPR), cross-camera trajectory reconstruction, real-time blacklist alerts, and GIS mobility analytics for smart cities.
+NETCAM is an enterprise-grade visual intelligence platform delivering multi-camera vehicle detection, high-accuracy automatic number-plate recognition (ANPR), cross-camera trajectory reconstruction, real-time blacklist alerts, and GIS mobility analytics for smart cities.
 
 ---
 

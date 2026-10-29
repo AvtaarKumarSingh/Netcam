@@ -31,7 +31,7 @@ export function AnalyticsSection({ analytics, selectedVehicle }) {
           </p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "var(--text-muted)" }}>
-          <span>NETWORK ANALYSIS: <strong style={{ color: "var(--drishti-blue)" }}>{kpis.total_tracks || 914} TRACKS</strong></span>
+          <span>NETWORK ANALYSIS: <strong style={{ color: "var(--NETCAM-blue)" }}>{kpis.total_tracks || 914} TRACKS</strong></span>
           <span>•</span>
           <span>OBSERVATION WINDOW: <strong className="font-mono">{kpis.total_duration_sec ? `${Math.floor(kpis.total_duration_sec / 60)}m ${Math.floor(kpis.total_duration_sec % 60)}s` : "4m 06s"}</strong></span>
         </div>
@@ -198,7 +198,7 @@ export function AnalyticsSection({ analytics, selectedVehicle }) {
                     <td>
                       <span className="od-node-badge">{od.origin_name}</span>
                     </td>
-                    <td style={{ textAlign: "center", color: "var(--drishti-blue)" }}>
+                    <td style={{ textAlign: "center", color: "var(--NETCAM-blue)" }}>
                       <ArrowRight size={14} />
                     </td>
                     <td>

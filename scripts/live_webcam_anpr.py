@@ -1,7 +1,7 @@
 """
 scripts/live_webcam_anpr.py
 
-DRISHTI — Real-Time Standalone Laptop Camera ANPR & Optical Text Recognition Studio.
+NETCAM — Real-Time Standalone Laptop Camera ANPR & Optical Text Recognition Studio.
 Run directly on your laptop to detect license plates, text on paper, phone screens, or signs.
 
 Usage:
@@ -43,7 +43,7 @@ def draw_hud(frame, results, fps, mirror_mode, scan_status="SCANNING"):
     cv2.line(canvas, (0, 54), (w, 54), (0, 215, 255), 2)
 
     # Title & FPS
-    cv2.putText(canvas, "DRISHTI // LIVE LAPTOP ANPR & OPTICAL TEXT SCANNER", (18, 34),
+    cv2.putText(canvas, "NETCAM // LIVE LAPTOP ANPR & OPTICAL TEXT SCANNER", (18, 34),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 2)
     cv2.putText(canvas, f"FPS: {fps:.1f}", (w - 140, 34),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 200), 2)
@@ -124,14 +124,14 @@ def draw_hud(frame, results, fps, mirror_mode, scan_status="SCANNING"):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="DRISHTI Live Laptop Camera ANPR & Optical Text Scanner")
+    parser = argparse.ArgumentParser(description="NETCAM Live Laptop Camera ANPR & Optical Text Scanner")
     parser.add_argument("--cam", type=int, default=0, help="Camera device index (default: 0)")
     parser.add_argument("--conf", type=float, default=0.25, help="Detection confidence threshold")
     parser.add_argument("--mirror", action="store_true", default=False, help="Mirror flip camera horizontally")
     args = parser.parse_args()
 
     print("=" * 70)
-    print("  DRISHTI — REAL-TIME LAPTOP WEBCAM ANPR & OPTICAL TEXT SCANNER")
+    print("  NETCAM — REAL-TIME LAPTOP WEBCAM ANPR & OPTICAL TEXT SCANNER")
     print("  Smart India Hackathon 2026 | PS 26127 (BEL)")
     print("=" * 70)
     print(f"Opening camera index {args.cam}...")
@@ -157,7 +157,7 @@ def main():
     fps_history = []
     t_prev = time.time()
 
-    window_name = "DRISHTI - Live ANPR Laptop Camera Studio"
+    window_name = "NETCAM - Live ANPR Laptop Camera Studio"
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(window_name, 1024, 600)
 
@@ -214,7 +214,7 @@ def main():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        print("Camera released. DRISHTI Live ANPR finished.")
+        print("Camera released. NETCAM Live ANPR finished.")
 
 
 if __name__ == "__main__":

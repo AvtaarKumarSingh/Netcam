@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 from ultralytics import YOLO
 
-logger = logging.getLogger("drishti.yolo_evidence")
+logger = logging.getLogger("NETCAM.yolo_evidence")
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 TRACKS_CACHE_DIR = PROJECT_ROOT / "static" / "cache" / "tracks"

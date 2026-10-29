@@ -1,7 +1,7 @@
 """
-run_drishti_master.py
+run_NETCAM_master.py
 
-DRISHTI — City-Wide Visual Intelligence Platform (SIH 2026 / PS 26127)
+NETCAM — City-Wide Visual Intelligence Platform (SIH 2026 / PS 26127)
 1-Click Master Launcher for Bharat Electronics Limited (BEL) Evaluation Jury.
 
 Automates:
@@ -108,7 +108,7 @@ def start_frontend():
 
 
 def open_browser():
-    print("[5/5] Launching DRISHTI Command Center Dashboard...")
+    print("[5/5] Launching NETCAM Command Center Dashboard...")
     target_url = "http://localhost:5173"
     try:
         webbrowser.open(target_url)
@@ -126,7 +126,7 @@ def main():
     open_browser()
 
     print("\n" + "=" * 80)
-    print("  🚀 DRISHTI IS FULLY ONLINE & READY FOR SIH JURY EVALUATION!")
+    print("  🚀 NETCAM IS FULLY ONLINE & READY FOR SIH JURY EVALUATION!")
     print("  • Frontend Dashboard:  http://localhost:5173")
     print("  • Backend Swagger API: http://127.0.0.1:8000/docs")
     print("  • System Validation:   http://localhost:5173 (Click 'System Validation')")
@@ -137,7 +137,7 @@ def main():
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print("\nStopping DRISHTI services...")
+        print("\nStopping NETCAM services...")
         if backend_proc:
             backend_proc.terminate()
         if frontend_proc:

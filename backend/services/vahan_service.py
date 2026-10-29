@@ -92,7 +92,7 @@ def get_vahan_rc_details(plate: str, vehicle_type: Optional[str] = "Car") -> Dic
         try:
             timeout_sec = float(os.getenv("VAHAN_API_TIMEOUT", "3.0"))
             headers = {
-                "User-Agent": "DRISHTI-CitySurveillance/1.0",
+                "User-Agent": "NETCAM-CitySurveillance/1.0",
                 "Content-Type": "application/json",
             }
             if vahan_api_key:
@@ -107,7 +107,7 @@ def get_vahan_rc_details(plate: str, vehicle_type: Optional[str] = "Car") -> Dic
                 body = resp.json()
                 data = body.get("data") or body.get("result") or body
                 if data and isinstance(data, dict):
-                    # Map external gateway keys to standard DRISHTI VAHAN contract
+                    # Map external gateway keys to standard NETCAM VAHAN contract
                     state_code = clean_plate[:2] if len(clean_plate) >= 2 else "WB"
                     return {
                         "plate": clean_plate,
@@ -404,6 +404,6 @@ def generate_echallan_notice(
         "issuing_authority": "Traffic Police Headquarters, Asansol-Durgapur Police Commissionerate",
         "statutory_notice": (
             "This electronic challan is generated automatically under Section 136A of the Motor Vehicles Act, 1988, "
-            "backed by DRISHTI City-Wide Visual Intelligence Camera Infrastructure."
+            "backed by NETCAM City-Wide Visual Intelligence Camera Infrastructure."
         ),
     }

@@ -11,7 +11,7 @@ import {
   Radio,
   Sparkles,
 } from "lucide-react";
-import { DrishtiEyeLogo } from "./DrishtiEyeLogo";
+import { NETCAMEyeLogo } from "./NETCAMEyeLogo";
 
 export function Header({
   onOpenAddBlacklist,
@@ -47,23 +47,23 @@ export function Header({
 
   return (
     <header className="command-header">
-      {/* LEFT: DRISHTI Logo & Brand Identity (Clicking opens System Validation & Empirical Benchmark) */}
+      {/* LEFT: NETCAM Logo & Brand Identity (Clicking opens System Validation & Empirical Benchmark) */}
       <div
         className="header-brand-nexus header-brand-nexus-clickable"
         onClick={() => onSelectTab && onSelectTab(activeTab === "validation" ? "surveillance" : "validation")}
-        title="Click DRISHTI Logo to view Technical System Validation & Empirical Benchmarks"
+        title="Click NETCAM Logo to view Technical System Validation & Empirical Benchmarks"
         role="button"
         tabIndex={0}
       >
         {/* Futuristic Eye Symbol with Ambient Glow */}
-        <div className="header-drishti-logo-slot">
-          <DrishtiEyeLogo size={40} animated={true} />
+        <div className="header-NETCAM-logo-slot">
+          <NETCAMEyeLogo size={40} animated={true} />
         </div>
 
         <div className="brand-text-block">
           <div className="brand-primary-row">
             <h1 className="brand-core-title">
-              DRISHTI
+              NETCAM
             </h1>
             {activeTab === "validation" && (
               <span className="brand-val-active-tag">SYSTEM VALIDATION</span>

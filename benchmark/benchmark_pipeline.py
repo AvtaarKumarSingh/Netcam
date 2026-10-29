@@ -2,7 +2,7 @@
 """
 benchmark/benchmark_pipeline.py
 
-Real-Time Performance & Latency Benchmark for DRISHTI (SIH 2026 PS 26127).
+Real-Time Performance & Latency Benchmark for NETCAM (SIH 2026 PS 26127).
 Empirically measures pipeline throughput on real CCTV footage:
 - Input Video FPS
 - Effective Processing FPS
@@ -40,7 +40,7 @@ PLATE_MODEL_PATH = PROJECT_ROOT / "models" / "license_plate.pt"
 
 def run_performance_benchmark(sample_frames: int = 60, stride: int = 3):
     print("=" * 65)
-    print("      DRISHTI — REAL-TIME PIPELINE PERFORMANCE BENCHMARK        ")
+    print("      NETCAM — REAL-TIME PIPELINE PERFORMANCE BENCHMARK        ")
     print("=" * 65)
 
     if not VIDEO_SAMPLE.exists():
@@ -171,7 +171,7 @@ def run_performance_benchmark(sample_frames: int = 60, stride: int = 3):
     mem_info = psutil.virtual_memory()
 
     benchmark_data = {
-        "benchmark_name": "DRISHTI End-to-End Pipeline Performance Benchmark",
+        "benchmark_name": "NETCAM End-to-End Pipeline Performance Benchmark",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "input_video_fps": round(nominal_fps, 1),
         "processing_fps": effective_fps,

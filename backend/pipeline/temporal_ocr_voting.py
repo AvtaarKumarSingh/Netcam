@@ -1,7 +1,7 @@
 """
 backend/pipeline/temporal_ocr_voting.py
 
-Enterprise Temporal Multi-Frame OCR Voting Engine for DRISHTI.
+Enterprise Temporal Multi-Frame OCR Voting Engine for NETCAM.
 Aggregates license plate recognitions across consecutive video frames of a single
 vehicle track to perform character-level majority voting.
 

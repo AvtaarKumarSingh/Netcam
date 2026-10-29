@@ -2,7 +2,7 @@
 """
 evaluation/evaluate_ocr.py
 
-Rigorous OCR & ANPR Accuracy Benchmark for DRISHTI (SIH 2026 PS 26127).
+Rigorous OCR & ANPR Accuracy Benchmark for NETCAM (SIH 2026 PS 26127).
 Evaluates OCR recognition performance against verified ground-truth plates
 from the multi-camera CCTV dataset (Vivekananda Sarani & Kanyapur Link Road).
 
@@ -129,7 +129,7 @@ def preprocess_plate_crop(image: np.ndarray) -> np.ndarray:
 def run_benchmark():
     start_time = time.time()
     print("=" * 65)
-    print("      DRISHTI — OCR & ANPR ACCURACY BENCHMARK (SIH PS 26127)      ")
+    print("      NETCAM — OCR & ANPR ACCURACY BENCHMARK (SIH PS 26127)      ")
     print("=" * 65)
 
     if not GROUND_TRUTH_CSV.exists():
@@ -200,7 +200,7 @@ def run_benchmark():
     elapsed_time_sec = round(time.time() - start_time, 3)
 
     report_data = {
-        "benchmark_name": "DRISHTI Real ANPR & OCR Accuracy Benchmark",
+        "benchmark_name": "NETCAM Real ANPR & OCR Accuracy Benchmark",
         "problem_statement": "SIH 2026 PS 26127 — Multi-Camera ANPR Trajectory Tracking",
         "evaluated_at": datetime.now(timezone.utc).isoformat(),
         "total_samples": total_samples,

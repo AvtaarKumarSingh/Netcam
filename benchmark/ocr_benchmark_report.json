@@ -1,6 +1,6 @@
 {
   "status": "evaluated",
-  "benchmark_name": "DRISHTI High-Precision ANPR & OCR Accuracy Benchmark",
+  "benchmark_name": "NETCAM High-Precision ANPR & OCR Accuracy Benchmark",
   "compliance_target": "SIH 2026 Problem 26127 (>90% accuracy across real-world conditions)",
   "target_met": true,
   "total_samples": 144,

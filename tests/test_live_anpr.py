@@ -1,7 +1,7 @@
 """
 tests/test_live_anpr.py
 
-Validation test suite for DRISHTI Live Laptop Camera ANPR & Optical Text Recognition.
+Validation test suite for NETCAM Live Laptop Camera ANPR & Optical Text Recognition.
 Tests:
 1. Engine readiness status endpoint
 2. License plate detection & VAHAN enrichment

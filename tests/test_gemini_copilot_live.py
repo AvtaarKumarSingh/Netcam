@@ -23,15 +23,15 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from fastapi.testclient import TestClient
 from backend.app import app
-from backend.services.drishti_gpt_service import DrishtiGPTService, SessionHistoryManager
+from backend.services.NETCAM_gpt_service import NETCAMGPTService, SessionHistoryManager
 
 
 def test_live_gemini_conversational():
     print("\n--- 1. Testing Live Gemini Natural Conversational Reply ---")
-    res = DrishtiGPTService.process_query("Hello bhai, DRISHTI kya hai short me batao", context={"session_id": "live_test_1"})
+    res = NETCAMGPTService.process_query("Hello bhai, NETCAM kya hai short me batao", context={"session_id": "live_test_1"})
     assert res["status"] == "SUCCESS"
     assert res["intent"] in ("CHAT_GEMINI", "CHAT_LOCAL_VERIFIED")
-    assert "drishti" in res["reply"].lower()
+    assert "NETCAM" in res["reply"].lower()
     assert len(res["reply"]) > 20
     assert len(res["speech_text"]) > 0
     print(f"[PASS] Gemini intent: {res['intent']}")
@@ -42,18 +42,18 @@ def test_multiturn_session_context():
     print("\n--- 2. Testing Multi-Turn Session History ---")
     session_id = "multiturn_session_demo"
     # Turn 1: Presentation query
-    res1 = DrishtiGPTService.process_query("Presentation me 30 second me kaise explain karu?", context={"session_id": session_id})
+    res1 = NETCAMGPTService.process_query("Presentation me 30 second me kaise explain karu?", context={"session_id": session_id})
     assert len(res1["reply"]) > 20
 
     # Turn 2: Follow-up in English
-    res2 = DrishtiGPTService.process_query("English me batao", context={"session_id": session_id})
-    assert any(w in res2["reply"].lower() for w in ["pitch", "30", "drishti", "system", "second"])
+    res2 = NETCAMGPTService.process_query("English me batao", context={"session_id": session_id})
+    assert any(w in res2["reply"].lower() for w in ["pitch", "30", "NETCAM", "system", "second"])
     print(f"[PASS] Multi-turn context maintained across turns in session '{session_id}'")
 
 
 def test_live_data_grounding_no_hallucination():
     print("\n--- 3. Testing Real-Time J1 Telemetry Grounding ---")
-    res = DrishtiGPTService.process_query("J1 pe abhi kitne vehicles hain?", context={"session_id": "grounding_test"})
+    res = NETCAMGPTService.process_query("J1 pe abhi kitne vehicles hain?", context={"session_id": "grounding_test"})
     assert res["intent"] == "CONGESTION"
     assert "58" in res["reply"] or "detections" in res["reply"]
     assert "reply" in res
@@ -63,7 +63,7 @@ def test_live_data_grounding_no_hallucination():
 
 def test_vehicle_search_and_action_cards():
     print("\n--- 4. Testing Vehicle Search & Action Cards Preservation ---")
-    res = DrishtiGPTService.process_query("Where is vehicle WB37E1275?")
+    res = NETCAMGPTService.process_query("Where is vehicle WB37E1275?")
     assert res["intent"] == "VEHICLE_SEARCH"
     assert res["status"] == "FOUND"
     assert len(res["cards"]) > 0
@@ -81,7 +81,7 @@ def test_vehicle_search_and_action_cards():
 
 def test_speeding_audit_and_cards():
     print("\n--- 5. Testing Speeding Violations Audit ---")
-    res = DrishtiGPTService.process_query("Show me vehicles driving above 35 km/h")
+    res = NETCAMGPTService.process_query("Show me vehicles driving above 35 km/h")
     assert res["intent"] == "SPEEDING"
     assert res["status"] in ("VIOLATIONS_FOUND", "NO_VIOLATIONS")
     assert "reply" in res
@@ -91,7 +91,7 @@ def test_speeding_audit_and_cards():
 
 def test_blacklist_triage_and_cards():
     print("\n--- 6. Testing Blacklist & Threat Triage ---")
-    res = DrishtiGPTService.process_query("Are there any wanted or blacklisted vehicles on CCTV?")
+    res = NETCAMGPTService.process_query("Are there any wanted or blacklisted vehicles on CCTV?")
     assert res["intent"] == "BLACKLIST"
     assert "reply" in res
     assert len(res["suggested_actions"]) > 0
@@ -128,7 +128,7 @@ def test_offline_fallback_simulation():
     saved_key = os.environ.get("GEMINI_API_KEY", "")
     try:
         os.environ["GEMINI_API_KEY"] = ""
-        res = DrishtiGPTService.process_query("DRISHTI kya hai?", context={"session_id": "fallback_test"})
+        res = NETCAMGPTService.process_query("NETCAM kya hai?", context={"session_id": "fallback_test"})
         assert res["intent"] == "CHAT_LOCAL_VERIFIED"
         assert "90.97" in res["reply"] or "visual intelligence" in res["reply"].lower()
         print(f"[PASS] Graceful fallback to CHAT_LOCAL_VERIFIED succeeded without error.")
@@ -138,7 +138,7 @@ def test_offline_fallback_simulation():
 
 def run_all_tests():
     print("=" * 65)
-    print("DRISHTI AI COPILOT: COMPREHENSIVE LIVE & INTEGRATION TEST SUITE")
+    print("NETCAM AI COPILOT: COMPREHENSIVE LIVE & INTEGRATION TEST SUITE")
     print("=" * 65)
     test_live_gemini_conversational()
     test_multiturn_session_context()

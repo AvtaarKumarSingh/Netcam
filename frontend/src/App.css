@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DRISHTI — NEXT-GEN CITY-WIDE VISUAL INTELLIGENCE COMMAND CENTER
+   NETCAM — NEXT-GEN CITY-WIDE VISUAL INTELLIGENCE COMMAND CENTER
    Aesthetic: Warm Luxury Brownish Cyber Command Center • Executive Intel Theme
    Palette: Rich Espresso, Warm Amber & Bronze Shades with Precision Optic Accents
    ========================================================================== */
@@ -36,14 +36,14 @@
   --text-dim: #998878;
   --text-inverse: #FFFFFF;
 
-  /* Brand Colors - DRISHTI */
-  --drishti-blue: #0284C7;
-  --drishti-amber: #D97706;
-  --drishti-bronze: #8D5B2A;
-  --drishti-brown: #5C3D28;
-  --drishti-cyan: #0EA5E9;
-  --drishti-teal: #0D9488;
-  --drishti-slate: #231B16;
+  /* Brand Colors - NETCAM */
+  --NETCAM-blue: #0284C7;
+  --NETCAM-amber: #D97706;
+  --NETCAM-bronze: #8D5B2A;
+  --NETCAM-brown: #5C3D28;
+  --NETCAM-cyan: #0EA5E9;
+  --NETCAM-teal: #0D9488;
+  --NETCAM-slate: #231B16;
 
   /* Status Colors */
   --status-success: #059669;
@@ -109,7 +109,7 @@ body {
 
 ::selection {
   background: rgba(217, 119, 6, 0.25);
-  color: var(--drishti-slate);
+  color: var(--NETCAM-slate);
 }
 
 /* Custom Clean Scrollbars */
@@ -171,7 +171,7 @@ body {
 }
 
 /* ==========================================================================
-   HEADER: DRISHTI IDENTITY & MODERN COMMAND CENTER NAV BAR
+   HEADER: NETCAM IDENTITY & MODERN COMMAND CENTER NAV BAR
    ========================================================================== */
 .command-header {
   background: rgba(254, 252, 248, 0.88);
@@ -244,7 +244,7 @@ body {
 }
 
 /* Header Eye Slot with Cyber Glow */
-.header-drishti-logo-slot {
+.header-NETCAM-logo-slot {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +256,7 @@ body {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.header-drishti-logo-slot:hover {
+.header-NETCAM-logo-slot:hover {
   transform: translateY(-1px) scale(1.06);
   border-color: #D97706;
   box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
@@ -484,8 +484,8 @@ body {
 
 .text-status-green { color: var(--status-success); }
 .text-status-red { color: var(--status-error); }
-.text-brand { color: var(--drishti-blue); }
-.text-teal { color: var(--drishti-teal); }
+.text-brand { color: var(--NETCAM-blue); }
+.text-teal { color: var(--NETCAM-teal); }
 .text-muted { color: var(--text-muted); }
 .time-tz { font-size: 10px; color: var(--text-muted); font-weight: 500; }
 
@@ -854,7 +854,7 @@ body {
 .section-eyebrow {
   font-size: 11px;
   font-weight: 800;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 2px;
@@ -930,7 +930,7 @@ body {
   height: 36px;
   border-radius: var(--radius-md);
   background: rgba(2, 132, 199, 0.08);
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -982,13 +982,13 @@ body {
 }
 
 .camera-unit-card:hover {
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
 
 .camera-unit-card.is-selected {
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
 }
 
@@ -1029,7 +1029,7 @@ body {
 .cam-fps-badge {
   font-size: 10px;
   font-weight: 700;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   background: rgba(2, 132, 199, 0.08);
   border: 1px solid rgba(2, 132, 199, 0.18);
   padding: 2px 7px;
@@ -1136,7 +1136,7 @@ body {
 
 .cam-ctrl-btn:hover {
   background: var(--bg-muted);
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   border-color: var(--border-default);
 }
 
@@ -1157,7 +1157,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--drishti-blue);
+  background: var(--NETCAM-blue);
   cursor: pointer;
   transition: transform 0.1s, box-shadow 0.1s;
 }
@@ -1211,7 +1211,7 @@ body {
 }
 
 .kpi-stat-icon-wrap {
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   background: rgba(2, 132, 199, 0.08);
   width: 26px;
   height: 26px;
@@ -1474,7 +1474,7 @@ body {
 }
 
 .search-input-box:focus-within {
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   background: #FFFFFF;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
@@ -1550,8 +1550,8 @@ body {
 
 .target-sample-chip:hover {
   background: rgba(2, 132, 199, 0.08);
-  border-color: var(--drishti-blue);
-  color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
+  color: var(--NETCAM-blue);
   transform: translateY(-1px);
 }
 
@@ -1620,7 +1620,7 @@ body {
 .vehicle-type-badge {
   background: rgba(2, 132, 199, 0.08);
   border: 1px solid rgba(2, 132, 199, 0.2);
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   font-size: 12px;
   font-weight: 700;
   padding: 4px 12px;
@@ -1695,7 +1695,7 @@ body {
 .search-passage-title {
   font-size: 11px;
   font-weight: 800;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -1722,7 +1722,7 @@ body {
 
 .search-stepper-node:hover {
   background: #FFFFFF;
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   box-shadow: var(--shadow-xs);
   transform: translateY(-1px);
 }
@@ -1762,7 +1762,7 @@ body {
 .search-node-time {
   font-size: 10px;
   font-weight: 700;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
 }
 
 .search-node-play-btn {
@@ -1791,7 +1791,7 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1822,7 +1822,7 @@ body {
 }
 
 .stepper-camera-node:hover {
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   background: #FFFFFF;
   box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
@@ -1856,7 +1856,7 @@ body {
 .node-timestamp-pill {
   font-size: 11px;
   font-weight: 700;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   margin-top: 2px;
 }
 
@@ -1886,7 +1886,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1938,7 +1938,7 @@ body {
 
 .btn-map-expand:hover {
   background: var(--grad-primary);
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
 }
@@ -1994,8 +1994,8 @@ body {
 
 .map-cam-btn:hover, .map-cam-btn.active {
   background: rgba(2, 132, 199, 0.08);
-  border-color: var(--drishti-blue);
-  color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
+  color: var(--NETCAM-blue);
 }
 
 /* ==========================================================================
@@ -2705,7 +2705,7 @@ path.trajectory-glow-aura {
 
 .registry-filter-chip.is-active {
   background: var(--grad-dark-btn);
-  border-color: var(--drishti-slate);
+  border-color: var(--NETCAM-slate);
   color: #FFFFFF;
   box-shadow: var(--shadow-xs);
 }
@@ -2782,7 +2782,7 @@ path.trajectory-glow-aura {
   border-radius: var(--radius-xs);
   font-size: 11px;
   font-weight: 700;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
 }
 
 /* Pagination */
@@ -2817,7 +2817,7 @@ path.trajectory-glow-aura {
 
 .pagination-btn:hover:not(:disabled) {
   background: var(--bg-canvas-subtle);
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
 }
 
 .pagination-btn:disabled {
@@ -2895,7 +2895,7 @@ path.trajectory-glow-aura {
 
 .class-count-lbl {
   font-weight: 800;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
 }
 
 .class-track-bg {
@@ -2941,7 +2941,7 @@ path.trajectory-glow-aura {
 .flow-counter-badge {
   font-size: 12px;
   font-weight: 800;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   background: rgba(2, 132, 199, 0.08);
   border: 1px solid rgba(2, 132, 199, 0.2);
   padding: 3px 10px;
@@ -2984,7 +2984,7 @@ path.trajectory-glow-aura {
 }
 
 .pipeline-stage-card:hover {
-  border-color: var(--drishti-blue);
+  border-color: var(--NETCAM-blue);
   background: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
@@ -2993,7 +2993,7 @@ path.trajectory-glow-aura {
 .stage-number-pill {
   font-size: 10px;
   font-weight: 800;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   background: rgba(2, 132, 199, 0.08);
   padding: 2px 7px;
   border-radius: var(--radius-full);
@@ -3008,7 +3008,7 @@ path.trajectory-glow-aura {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   box-shadow: var(--shadow-xs);
 }
 
@@ -3184,9 +3184,9 @@ path.trajectory-glow-aura {
 }
 
 /* ==========================================================================
-   DRISHTI CYBER EYE LOGO & INTERACTIVE ANIMATIONS
+   NETCAM CYBER EYE LOGO & INTERACTIVE ANIMATIONS
    ========================================================================== */
-.drishti-cyber-eye-wrap {
+.NETCAM-cyber-eye-wrap {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -3194,32 +3194,32 @@ path.trajectory-glow-aura {
   filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.3));
 }
 
-.drishti-cyber-eye-wrap.is-animated .radar-dial-outer {
+.NETCAM-cyber-eye-wrap.is-animated .radar-dial-outer {
   transform-origin: 60px 60px;
   animation: radar-dial-spin 20s linear infinite;
 }
 
-.drishti-cyber-eye-wrap.is-animated .radar-arc-segmented {
+.NETCAM-cyber-eye-wrap.is-animated .radar-arc-segmented {
   transform-origin: 60px 60px;
   animation: radar-dial-counter 14s linear infinite;
 }
 
-.drishti-cyber-eye-wrap.is-animated .iris-reticle {
+.NETCAM-cyber-eye-wrap.is-animated .iris-reticle {
   transform-origin: 60px 60px;
   animation: radar-dial-spin 9s linear infinite;
 }
 
-.drishti-cyber-eye-wrap.is-animated .iris-aperture {
+.NETCAM-cyber-eye-wrap.is-animated .iris-aperture {
   transform-origin: 60px 60px;
   animation: radar-dial-counter 16s linear infinite;
 }
 
-.drishti-cyber-eye-wrap.is-animated .pupil-glow-core {
+.NETCAM-cyber-eye-wrap.is-animated .pupil-glow-core {
   transform-origin: 60px 60px;
   animation: pupil-breathe 2.4s ease-in-out infinite;
 }
 
-.drishti-cyber-eye-wrap.is-animated .cyber-scanline {
+.NETCAM-cyber-eye-wrap.is-animated .cyber-scanline {
   animation: laser-sweep 2.6s ease-in-out infinite;
 }
 
@@ -3528,12 +3528,12 @@ path.trajectory-glow-aura {
 
 .camera-unit-card:hover {
   transform: translateY(-3px);
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 8px 24px -4px rgba(217, 119, 6, 0.2);
 }
 
 .camera-unit-card.is-selected {
-  border-color: var(--drishti-amber) !important;
+  border-color: var(--NETCAM-amber) !important;
   box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.3), 0 8px 24px -4px rgba(217, 119, 6, 0.25);
 }
 
@@ -3552,7 +3552,7 @@ path.trajectory-glow-aura {
 }
 
 .stepper-camera-node:hover {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   background: #FFFFFF;
   box-shadow: 0 6px 20px -2px rgba(217, 119, 6, 0.15);
   transform: translateY(-2px);
@@ -3563,22 +3563,22 @@ path.trajectory-glow-aura {
 }
 
 .map-cam-btn:hover {
-  border-color: var(--drishti-amber);
-  color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
+  color: var(--NETCAM-amber);
   transform: translateY(-1px);
 }
 
 .map-cam-btn.active {
   background: rgba(217, 119, 6, 0.12);
-  border-color: var(--drishti-amber);
-  color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
+  color: var(--NETCAM-amber);
   box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
 }
 
 .target-sample-chip:hover {
   background: rgba(217, 119, 6, 0.1);
-  border-color: var(--drishti-amber);
-  color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
+  color: var(--NETCAM-amber);
   transform: translateY(-1px);
 }
 
@@ -3601,9 +3601,9 @@ path.trajectory-glow-aura {
   gap: 6px;
   padding: 6px 14px;
   border-radius: var(--radius-xs);
-  border: 1px solid var(--drishti-amber);
+  border: 1px solid var(--NETCAM-amber);
   background: rgba(217, 119, 6, 0.08);
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -3611,7 +3611,7 @@ path.trajectory-glow-aura {
 }
 
 .watchlist-manage-btn:hover {
-  background: var(--drishti-amber);
+  background: var(--NETCAM-amber);
   color: #FFFFFF;
   box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
 }
@@ -3652,7 +3652,7 @@ path.trajectory-glow-aura {
 }
 
 .alert-chip:hover {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   color: var(--text-primary);
 }
 
@@ -3883,8 +3883,8 @@ path.trajectory-glow-aura {
 }
 
 .alert-btn-primary:hover {
-  background: var(--drishti-amber);
-  border-color: var(--drishti-amber);
+  background: var(--NETCAM-amber);
+  border-color: var(--NETCAM-amber);
 }
 
 .alert-btn-secondary {
@@ -3894,8 +3894,8 @@ path.trajectory-glow-aura {
 }
 
 .alert-btn-secondary:hover {
-  border-color: var(--drishti-amber);
-  color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
+  color: var(--NETCAM-amber);
 }
 
 /* Modal Overlay & Card */
@@ -3979,7 +3979,7 @@ path.trajectory-glow-aura {
 }
 
 .watchlist-input:focus, .watchlist-select:focus {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
 }
 
 .watchlist-submit-btn {
@@ -3998,8 +3998,8 @@ path.trajectory-glow-aura {
 }
 
 .watchlist-submit-btn:hover:not(:disabled) {
-  background: var(--drishti-amber);
-  border-color: var(--drishti-amber);
+  background: var(--NETCAM-amber);
+  border-color: var(--NETCAM-amber);
 }
 
 .watchlist-table-wrap {
@@ -4103,7 +4103,7 @@ path.trajectory-glow-aura {
 }
 
 .map-active-target-tag {
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
   font-weight: 700;
 }
 
@@ -4150,7 +4150,7 @@ path.trajectory-glow-aura {
   font-size: 42px;
   font-weight: 900;
   line-height: 1;
-  color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
 }
 
 .speed-unit {
@@ -4278,7 +4278,7 @@ path.trajectory-glow-aura {
 }
 
 .registry-type-select:focus {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
 }
 
 /* ============================================================
@@ -5047,7 +5047,7 @@ path.trajectory-glow-aura {
 }
 
 .analytics-page-nav-banner:hover {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 8px 28px -4px rgba(217, 119, 6, 0.16);
   transform: translateY(-1px);
 }
@@ -5163,7 +5163,7 @@ path.trajectory-glow-aura {
   gap: 6px;
   background: rgba(217, 119, 6, 0.12);
   border: 1px solid rgba(217, 119, 6, 0.3);
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
   font-size: 11px;
   font-weight: 800;
   padding: 4px 10px;
@@ -5252,8 +5252,8 @@ path.trajectory-glow-aura {
 
 .tap-btn-secondary:hover {
   background: #F8FAFC;
-  border-color: var(--drishti-amber);
-  color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
+  color: var(--NETCAM-amber);
   transform: translateY(-1px);
 }
 
@@ -5430,7 +5430,7 @@ path.trajectory-glow-aura {
 
 .tap-metric-card:hover {
   transform: translateY(-2px);
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 8px 24px -2px rgba(217, 119, 6, 0.12);
 }
 
@@ -5556,7 +5556,7 @@ path.trajectory-glow-aura {
   height: 40px;
   border-radius: var(--radius-md);
   background: rgba(217, 119, 6, 0.1);
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5580,7 +5580,7 @@ path.trajectory-glow-aura {
 
 .tap-node-item:hover {
   background: #FFFFFF;
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 4px 12px rgba(45, 30, 15, 0.06);
 }
 
@@ -5827,7 +5827,7 @@ path.trajectory-glow-aura {
 .tap-tag-pill {
   font-size: 10px;
   font-weight: 800;
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
   letter-spacing: 0.08em;
   margin-bottom: 4px;
 }
@@ -5885,7 +5885,7 @@ path.trajectory-glow-aura {
 
 .tap-corridor-flow-card:hover {
   background: #FFFFFF;
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 6px 20px rgba(45, 30, 15, 0.08);
 }
 
@@ -5908,7 +5908,7 @@ path.trajectory-glow-aura {
 .tap-cf-share {
   font-size: 11px;
   font-weight: 700;
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
 }
 
 .tap-cf-nodes {
@@ -6013,7 +6013,7 @@ path.trajectory-glow-aura {
 }
 
 .tap-arrow-line {
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6149,7 +6149,7 @@ path.trajectory-glow-aura {
 
 .tap-recom-tile:hover {
   background: #FFFFFF;
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: 0 4px 16px rgba(45, 30, 15, 0.06);
 }
 
@@ -6360,7 +6360,7 @@ path.trajectory-glow-aura {
 .full-map-cam-btn.active {
   background: var(--grad-primary);
   color: #FFFFFF;
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
 }
 
 .full-map-timeline-sidebar {
@@ -6391,7 +6391,7 @@ path.trajectory-glow-aura {
 .sidebar-header-count {
   font-size: 11px;
   font-weight: 700;
-  color: var(--drishti-amber);
+  color: var(--NETCAM-amber);
 }
 
 .full-map-event-list {
@@ -6416,7 +6416,7 @@ path.trajectory-glow-aura {
 }
 
 .full-map-event-card:hover {
-  border-color: var(--drishti-amber);
+  border-color: var(--NETCAM-amber);
   box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
 }
@@ -6527,8 +6527,8 @@ path.trajectory-glow-aura {
 }
 
 .event-card-locate-btn:hover {
-  color: var(--drishti-blue);
-  border-color: var(--drishti-blue);
+  color: var(--NETCAM-blue);
+  border-color: var(--NETCAM-blue);
   background: rgba(2, 132, 199, 0.06);
 }
 
@@ -8733,7 +8733,7 @@ path.trajectory-glow-aura {
 }
 
 /* ==========================================================================
-   DRISHTI — LIVE LAPTOP WEBCAM ANPR & OPTICAL TEXT SCANNER STUDIO
+   NETCAM — LIVE LAPTOP WEBCAM ANPR & OPTICAL TEXT SCANNER STUDIO
    Warm Luxury Brownish Cyber Command Center • Executive Intel Theme
    ========================================================================== */
 
@@ -9601,7 +9601,7 @@ path.trajectory-glow-aura {
   gap: 5px;
   font-size: 10.5px;
   font-weight: 700;
-  color: var(--drishti-amber, #D97706);
+  color: var(--NETCAM-amber, #D97706);
   letter-spacing: 0.5px;
 }
 

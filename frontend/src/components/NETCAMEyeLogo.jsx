@@ -1,9 +1,9 @@
 import React from "react";
 
-export function DrishtiEyeLogo({ size = 48, animated = true, className = "" }) {
+export function NETCAMEyeLogo({ size = 48, animated = true, className = "" }) {
   return (
     <div
-      className={`drishti-cyber-eye-wrap ${animated ? "is-animated" : ""} ${className}`}
+      className={`NETCAM-cyber-eye-wrap ${animated ? "is-animated" : ""} ${className}`}
       style={{
         width: size,
         height: size,
@@ -20,7 +20,7 @@ export function DrishtiEyeLogo({ size = 48, animated = true, className = "" }) {
         height="100%"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="drishti-eye-svg"
+        className="NETCAM-eye-svg"
       >
         <defs>
           {/* Gradients */}

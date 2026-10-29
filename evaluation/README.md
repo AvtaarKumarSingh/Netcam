@@ -1,11 +1,11 @@
-# DRISHTI — ANPR & OCR Accuracy Evaluation Benchmark
+# NETCAM — ANPR & OCR Accuracy Evaluation Benchmark
 **SIH 2026 Problem Statement 26127**  
 *City-Wide AI Engine for Multi-Camera ANPR Trajectory Tracking and Urban Traffic Analytics*
 
 ---
 
 ## 1. Overview
-This module experimentally validates the ANPR recognition accuracy of the DRISHTI pipeline against real-world CCTV footage collected from 4 cameras across two major arterial junctions in Asansol:
+This module experimentally validates the ANPR recognition accuracy of the NETCAM pipeline against real-world CCTV footage collected from 4 cameras across two major arterial junctions in Asansol:
 - **Vivekananda Sarani** (Junction A — Cameras 01 & 02)
 - **Kanyapur Link Road** (Junction B — Cameras 01 & 02)
 

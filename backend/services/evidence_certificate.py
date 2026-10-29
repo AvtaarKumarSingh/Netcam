@@ -68,7 +68,7 @@ def generate_section_65b_certificate(plate: str, officer_name: str = "Inspector 
             "blacklist_status": "FLAGGED / BLACKLISTED" if trajectory_data.get("is_blacklisted") else "CLEAR / REGULAR",
         },
         "electronic_record_details": {
-            "system_name": "DRISHTI Multi-Camera Visual Intelligence Core",
+            "system_name": "NETCAM Multi-Camera Visual Intelligence Core",
             "audit_hash_sha256": evidence_hash,
             "generation_timestamp": timestamp_str,
             "nodes_surveyed": [event.get("camera_name", "CCTV Node") for event in events],
@@ -78,7 +78,7 @@ def generate_section_65b_certificate(plate: str, officer_name: str = "Inspector 
             "transit_speed_kmh": trajectory_data.get("transit_metrics", {}).get("average_speed_kmh", 0),
         },
         "legal_declaration": (
-            "I hereby certify that the electronic records described herein were produced by the DRISHTI "
+            "I hereby certify that the electronic records described herein were produced by the NETCAM "
             "automated surveillance system during its ordinary operational cycle. The computer system "
             "was operating properly, and the cryptographic hash guarantees tamper-evident chain of custody."
         ),

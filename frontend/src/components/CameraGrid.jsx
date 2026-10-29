@@ -66,7 +66,7 @@ export const CameraGrid = forwardRef(function CameraGrid(
 
   const [customStreamUrls, setCustomStreamUrls] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem("drishti_custom_camera_streams") || "{}");
+      return JSON.parse(localStorage.getItem("NETCAM_custom_camera_streams") || "{}");
     } catch (_) {
       return {};
     }
@@ -84,7 +84,7 @@ export const CameraGrid = forwardRef(function CameraGrid(
     };
     setCustomStreamUrls(updated);
     try {
-      localStorage.setItem("drishti_custom_camera_streams", JSON.stringify(updated));
+      localStorage.setItem("NETCAM_custom_camera_streams", JSON.stringify(updated));
     } catch (_) { }
     setStreamSuccessMsg(`Custom stream connected to ${getCanonicalCameraName(targetCamForStream)}!`);
     setTimeout(() => {
@@ -99,7 +99,7 @@ export const CameraGrid = forwardRef(function CameraGrid(
     delete updated[camId];
     setCustomStreamUrls(updated);
     try {
-      localStorage.setItem("drishti_custom_camera_streams", JSON.stringify(updated));
+      localStorage.setItem("NETCAM_custom_camera_streams", JSON.stringify(updated));
     } catch (_) { }
   };
 

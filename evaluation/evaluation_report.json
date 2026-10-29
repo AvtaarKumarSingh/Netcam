@@ -1,5 +1,5 @@
 {
-  "benchmark_name": "DRISHTI Real ANPR & OCR Accuracy Benchmark",
+  "benchmark_name": "NETCAM Real ANPR & OCR Accuracy Benchmark",
   "problem_statement": "SIH 2026 PS 26127 \u2014 Multi-Camera ANPR Trajectory Tracking",
   "evaluated_at": "2026-09-12T06:15:08.778948+00:00",
   "total_samples": 144,

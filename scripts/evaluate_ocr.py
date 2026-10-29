@@ -2,7 +2,7 @@
 """
 scripts/evaluate_ocr.py
 
-Rigorous OCR & ANPR Accuracy Evaluation Utility for DRISHTI.
+Rigorous OCR & ANPR Accuracy Evaluation Utility for NETCAM.
 Compares predicted plate strings from detections.json against an optional
 ground-truth annotation dataset.
 
@@ -161,7 +161,7 @@ def evaluate_ocr(ground_truth_path: Optional[Path] = None) -> Dict[str, Any]:
 
     report = {
         "status": "evaluated",
-        "benchmark_name": "DRISHTI High-Precision ANPR & OCR Accuracy Benchmark",
+        "benchmark_name": "NETCAM High-Precision ANPR & OCR Accuracy Benchmark",
         "compliance_target": "SIH 2026 Problem 26127 (>90% accuracy across real-world conditions)",
         "target_met": char_acc >= 90.0,
         "total_samples": evaluated_samples,
@@ -186,7 +186,7 @@ def evaluate_ocr(ground_truth_path: Optional[Path] = None) -> Dict[str, Any]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Evaluate OCR accuracy for DRISHTI")
+    parser = argparse.ArgumentParser(description="Evaluate OCR accuracy for NETCAM")
     parser.add_argument(
         "--ground-truth",
         "-g",
@@ -206,7 +206,7 @@ def main():
     result = evaluate_ocr(gt_path)
 
     print("\n=======================================================")
-    print("   DRISHTI ANPR & OCR REAL-WORLD ACCURACY BENCHMARK   ")
+    print("   NETCAM ANPR & OCR REAL-WORLD ACCURACY BENCHMARK   ")
     print("    Smart India Hackathon 2026 - Problem ID: 26127     ")
     print("=======================================================")
     if result["status"] == "not_configured":

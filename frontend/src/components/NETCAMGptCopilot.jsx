@@ -19,7 +19,7 @@ import {
   Heart,
 } from "lucide-react";
 import { api } from "../services/api";
-import "./DrishtiGptCopilot.css";
+import "./NETCAMGptCopilot.css";
 
 /* =========================================================================
    CUTE OUT-OF-THE-BOX AI BOT MASCOT AVATAR (Interactive & Expressive)
@@ -99,7 +99,7 @@ function CuteBotMascot({ isHovered = false, size = 32 }) {
   );
 }
 
-export function DrishtiGptCopilot({
+export function NETCAMGptCopilot({
   isOpen,
   onClose,
   onOpen,
@@ -115,12 +115,12 @@ export function DrishtiGptCopilot({
     {
       id: "initial_greeting",
       sender: "assistant",
-      text: `### DRISHTI AI Assistant\n\nMain **DRISHTI AI Assistant** hoon ✨\n\nAap mujhse **Naye Features**, **Live Webcam ANPR**, **2D GIS Corridor Map**, vehicle tracking (e.g. \`WB37E1275\`), speed calculation, ya project architecture ke baare mein kuch bhi pooch sakte ho!\n\nNeeche diye suggestions try karein ya message type karein.`,
+      text: `### NETCAM AI Assistant\n\nMain **NETCAM AI Assistant** hoon ✨\n\nAap mujhse **Naye Features**, **Live Webcam ANPR**, **2D GIS Corridor Map**, vehicle tracking (e.g. \`WB37E1275\`), speed calculation, ya project architecture ke baare mein kuch bhi pooch sakte ho!\n\nNeeche diye suggestions try karein ya message type karein.`,
       quickChips: [
         "✨ Naye features kya hain?",
         "📷 Live ANPR open karo",
         "🗺️ 2D GIS Corridor",
-        "DRISHTI kya hai?",
+        "NETCAM kya hai?",
         "Accuracy kitni hai?",
         "Architecture explain karo",
       ],
@@ -216,8 +216,8 @@ export function DrishtiGptCopilot({
     setLoading(true);
 
     try {
-      const response = await api.askDrishtiGpt(query, {
-        session_id: "drishti_chat_session",
+      const response = await api.askNETCAMGpt(query, {
+        session_id: "NETCAM_chat_session",
         history: newHistory.slice(-8).map((m) => ({
           sender: m.sender,
           text: m.text,
@@ -252,11 +252,11 @@ export function DrishtiGptCopilot({
     let suggestedActions = [];
 
     if (qLower.includes("hello") || qLower.includes("hi") || qLower.includes("namaste") || qLower.includes("bhai")) {
-      reply = `Namaste bhai! Main **DRISHTI AI Assistant** hoon ✨\n\nAap mujhse **Naye Features**, **Live Webcam ANPR**, **2D GIS Map**, YOLOv8 pipeline, OCR accuracy, ya vehicle tracking ke bare me pooch sakte ho!`;
-      speech = "Hello! DRISHTI AI Assistant is online. How can I help you today?";
+      reply = `Namaste bhai! Main **NETCAM AI Assistant** hoon ✨\n\nAap mujhse **Naye Features**, **Live Webcam ANPR**, **2D GIS Map**, YOLOv8 pipeline, OCR accuracy, ya vehicle tracking ke bare me pooch sakte ho!`;
+      speech = "Hello! NETCAM AI Assistant is online. How can I help you today?";
     } else if (qLower.includes("naya feature") || qLower.includes("naye feature") || qLower.includes("new feature") || qLower.includes("update") || qLower.includes("kya naya")) {
-      reply = `### ✨ DRISHTI — Naye Features & Updates\n\n1. **📷 Live Laptop Webcam ANPR**: Real-time camera scanning with YOLOv8 + PaddleOCR & dual-orientation mirror auto-fallback.\n2. **🗺️ Streamlined 2D Tactical GIS Map**: 60 FPS smooth trajectory animation between Junction A and Junction B with clean text-only camera popups.\n3. **📑 MoRTH VAHAN 4.0 Digital RC**: Complete vehicle ownership, fuel type, PUCC, and tax validation.\n4. **⚡ Automated e-Challan**: 1-click violation notices with dynamic QR code payment.\n5. **⚖️ Section 65B Digital Certificates**: Tamper-evident SHA-256 frame hash certificates for court admissibility.`;
-      speech = "DRISHTI now features real-time Live Webcam ANPR, an optimized 2D GIS corridor map, VAHAN 4.0 RC integration, automated e-Challan, and Section 65B evidence certificates.";
+      reply = `### ✨ NETCAM — Naye Features & Updates\n\n1. **📷 Live Laptop Webcam ANPR**: Real-time camera scanning with YOLOv8 + PaddleOCR & dual-orientation mirror auto-fallback.\n2. **🗺️ Streamlined 2D Tactical GIS Map**: 60 FPS smooth trajectory animation between Junction A and Junction B with clean text-only camera popups.\n3. **📑 MoRTH VAHAN 4.0 Digital RC**: Complete vehicle ownership, fuel type, PUCC, and tax validation.\n4. **⚡ Automated e-Challan**: 1-click violation notices with dynamic QR code payment.\n5. **⚖️ Section 65B Digital Certificates**: Tamper-evident SHA-256 frame hash certificates for court admissibility.`;
+      speech = "NETCAM now features real-time Live Webcam ANPR, an optimized 2D GIS corridor map, VAHAN 4.0 RC integration, automated e-Challan, and Section 65B evidence certificates.";
       suggestedActions = [
         { label: "📷 Launch Live Webcam ANPR", action: "SWITCH_TAB", payload: { tab: "live_anpr" } },
         { label: "🗺️ Open 2D GIS Map", action: "SWITCH_TAB", payload: { tab: "surveillance" } },
@@ -268,17 +268,17 @@ export function DrishtiGptCopilot({
         { label: "📷 Launch Live Webcam ANPR", action: "SWITCH_TAB", payload: { tab: "live_anpr" } },
       ];
     } else if (qLower.includes("map") || qLower.includes("gis") || qLower.includes("junction")) {
-      reply = `### 🗺️ DRISHTI 2D Tactical GIS Map & Trajectory Corridor\n\n- **Dual Junctions**: Junction A (Vivekananda Sarani) aur Junction B (Kanyapur Link Road).\n- **Smooth 60 FPS Trajectory**: Physics-based Haversine speed calculation ke saath continuous animated movement.\n- **Clean Text-Only Pins**: Click karne par instant camera status dikhata hai, zero video playback lag.\n- **Multi-Layers**: Street, ESRI Satellite, aur Dark Cyber Tactical modes.`;
-      speech = "DRISHTI map features an optimized 2D GIS corridor connecting Junction A and Junction B with smooth 60 FPS vehicle trajectory and clean camera popups.";
+      reply = `### 🗺️ NETCAM 2D Tactical GIS Map & Trajectory Corridor\n\n- **Dual Junctions**: Junction A (Vivekananda Sarani) aur Junction B (Kanyapur Link Road).\n- **Smooth 60 FPS Trajectory**: Physics-based Haversine speed calculation ke saath continuous animated movement.\n- **Clean Text-Only Pins**: Click karne par instant camera status dikhata hai, zero video playback lag.\n- **Multi-Layers**: Street, ESRI Satellite, aur Dark Cyber Tactical modes.`;
+      speech = "NETCAM map features an optimized 2D GIS corridor connecting Junction A and Junction B with smooth 60 FPS vehicle trajectory and clean camera popups.";
       suggestedActions = [
         { label: "🗺️ Open GIS Route Map", action: "SWITCH_TAB", payload: { tab: "surveillance" } },
       ];
     } else if (qLower.includes("joke")) {
-      reply = `Ek driver red light par nahi ruka aur traffic cop ne use pakda:\n\n*Cop:* "Bhai red light nahi dikhi kya?"\n*Driver:* "Sir, red light to dikhi thi... bas aap nahi dikhe!" 😂\n\nDRISHTI ka computer vision 24/7 bina kisi blind spot ke monitor karta hai!`;
+      reply = `Ek driver red light par nahi ruka aur traffic cop ne use pakda:\n\n*Cop:* "Bhai red light nahi dikhi kya?"\n*Driver:* "Sir, red light to dikhi thi... bas aap nahi dikhe!" 😂\n\nNETCAM ka computer vision 24/7 bina kisi blind spot ke monitor karta hai!`;
       speech = "Haha, here is a traffic joke for you!";
     } else {
-      reply = `Aapne poocha: **"${query}"**\n\nDRISHTI city-wide visual intelligence platform Asansol ke 4 CCTV cameras (Vivekananda Sarani & Kanyapur Link Road) ko monitor karta hai (90.97% OCR accuracy).`;
-      speech = "I am ready to assist you with the DRISHTI intelligence platform.";
+      reply = `Aapne poocha: **"${query}"**\n\nNETCAM city-wide visual intelligence platform Asansol ke 4 CCTV cameras (Vivekananda Sarani & Kanyapur Link Road) ko monitor karta hai (90.97% OCR accuracy).`;
+      speech = "I am ready to assist you with the NETCAM intelligence platform.";
     }
 
     return {
@@ -292,7 +292,7 @@ export function DrishtiGptCopilot({
         "✨ Naye features kya hain?",
         "📷 Live ANPR open karo",
         "🗺️ 2D GIS Corridor",
-        "DRISHTI kya hai?",
+        "NETCAM kya hai?",
         "Accuracy kitni hai?",
         "Architecture explain karo",
       ],
@@ -529,7 +529,7 @@ export function DrishtiGptCopilot({
                 <CuteBotMascot size={26} />
               </div>
               <div className="copilot-title-group">
-                <h2>DRISHTI AI</h2>
+                <h2>NETCAM AI</h2>
               </div>
             </div>
 
@@ -543,9 +543,9 @@ export function DrishtiGptCopilot({
                     {
                       id: `greet_${Date.now()}`,
                       sender: "assistant",
-                      text: "### DRISHTI AI Assistant\nReady for new vehicle search or traffic question!",
+                      text: "### NETCAM AI Assistant\nReady for new vehicle search or traffic question!",
                       quickChips: [
-                        "DRISHTI kya hai?",
+                        "NETCAM kya hai?",
                         "ANPR kaise kaam karta hai?",
                         "Architecture explain karo",
                         "Accuracy kitni hai?",
@@ -658,7 +658,7 @@ export function DrishtiGptCopilot({
                 <div className="copilot-assistant-bubble typing">
                   <div className="copilot-typing-indicator">
                     <span className="copilot-typing-label">
-                      ✨ DRISHTI is thinking...
+                      ✨ NETCAM is thinking...
                     </span>
                     <div className="copilot-typing-dot dot-1"></div>
                     <div className="copilot-typing-dot dot-2"></div>
@@ -724,7 +724,7 @@ export function DrishtiGptCopilot({
                 placeholder={
                   isVoiceActive
                     ? "🎙️ Listening... Bolye"
-                    : "Ask DRISHTI AI anything about the project..."
+                    : "Ask NETCAM AI anything about the project..."
                 }
                 disabled={loading}
               />
@@ -740,7 +740,7 @@ export function DrishtiGptCopilot({
             </form>
 
             <div className="copilot-input-hint">
-              <span>DRISHTI AI Assistant</span>
+              <span>NETCAM AI Assistant</span>
               <span className="copilot-kbd">Ctrl+K</span>
             </div>
           </div>

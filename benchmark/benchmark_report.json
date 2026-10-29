@@ -1,5 +1,5 @@
 {
-  "benchmark_name": "DRISHTI End-to-End Pipeline Performance Benchmark",
+  "benchmark_name": "NETCAM End-to-End Pipeline Performance Benchmark",
   "timestamp": "2026-09-12T06:16:15.422235+00:00",
   "input_video_fps": 29.7,
   "processing_fps": 1.5,

@@ -1,8 +1,8 @@
-# DRISHTI — SIH 2026 Problem Statement 26127 Readiness Matrix
+# NETCAM — SIH 2026 Problem Statement 26127 Readiness Matrix
 
-**Problem Statement 26127**: *City-Wide AI Engine for Multi-Camera ANPR Trajectory Tracking and Urban Traffic Analytics*  
-**Platform**: DRISHTI — Visual Intelligence for Vehicle Tracking & Mobility Analysis  
-**Audit Date**: September 12, 2026  
+**Problem Statement 26127**: *City-Wide AI Engine for Multi-Camera ANPR Trajectory Tracking and Urban Traffic Analytics*
+**Platform**: NETCAM — Visual Intelligence for Vehicle Tracking & Mobility Analysis
+**Audit Date**: September 12, 2026
 **Compliance Status**: **ALL 15 TECHNICAL CORE CAPABILITIES IMPLEMENTED & VALIDATED**
 
 ---

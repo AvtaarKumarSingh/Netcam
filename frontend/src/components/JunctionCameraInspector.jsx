@@ -206,7 +206,7 @@ export function JunctionCameraInspector({
                     onClick={() => {
                       if (onCameraSelect) onCameraSelect(cam.id);
                     }}
-                    title="Focus this camera feed in DRISHTI Command Center"
+                    title="Focus this camera feed in NETCAM Command Center"
                   >
                     <Eye size={13} />
                     <span>FOCUS CAM</span>

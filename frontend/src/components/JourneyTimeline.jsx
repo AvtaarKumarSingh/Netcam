@@ -28,7 +28,7 @@ export function JourneyTimeline({ selectedVehicle, onPlayEvent, onFocusCamera })
           <div className="section-eyebrow">Vehicle Travel Route</div>
           <h3 className="section-main-heading" style={{ fontSize: "16px" }}>
             Camera Travel Timeline:{" "}
-            <span className="font-mono" style={{ color: "var(--drishti-blue)" }}>
+            <span className="font-mono" style={{ color: "var(--NETCAM-blue)" }}>
               {selectedVehicle.plate || selectedVehicle.global_vehicle_id}
             </span>
           </h3>

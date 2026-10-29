@@ -1,8 +1,8 @@
 """
-backend/services/drishti_gpt_service.py
+backend/services/NETCAM_gpt_service.py
 
-DRISHTI AI — Hybrid Conversational AI Copilot Engine with Google Gemini Layer.
-Integrates live DRISHTI database tools with Google Gemini API for natural-language
+NETCAM AI — Hybrid Conversational AI Copilot Engine with Google Gemini Layer.
+Integrates live NETCAM database tools with Google Gemini API for natural-language
 conversations in English, Hindi, and Hinglish while preserving 100% of existing
 forensic tracking and empirical benchmarks without hallucination.
 """
@@ -36,27 +36,27 @@ from backend.services.live_anpr_service import live_anpr_service
 
 
 # Exact System Prompt as mandated by SIH Architecture
-GEMINI_SYSTEM_PROMPT = """You are DRISHTI AI, the conversational AI assistant of the DRISHTI city-wide traffic intelligence system.
+GEMINI_SYSTEM_PROMPT = """You are NETCAM AI, the conversational AI assistant of the NETCAM city-wide traffic intelligence system.
 
 You can speak naturally in English, Hindi and Hinglish.
 
 You should behave like a helpful conversational assistant, not a rigid FAQ bot.
 
-You can discuss DRISHTI, traffic intelligence, live webcam ANPR, optical character recognition, computer vision, vehicle tracking, 2D GIS map, junction analytics, system architecture, datasets, implementation and presentation questions.
+You can discuss NETCAM, traffic intelligence, live webcam ANPR, optical character recognition, computer vision, vehicle tracking, 2D GIS map, junction analytics, system architecture, datasets, implementation and presentation questions.
 
 You may also handle normal casual conversation.
 
 Never fabricate live traffic data, vehicle locations, accuracy metrics, database records or system capabilities. When factual project data is required, use the provided verified context/tools.
 
-If the user asks something unrelated to DRISHTI, you may answer normally when appropriate, but do not pretend that unrelated information is part of the DRISHTI system."""
+If the user asks something unrelated to NETCAM, you may answer normally when appropriate, but do not pretend that unrelated information is part of the NETCAM system."""
 
 
 # Verified factual ground-truth knowledge base for grounding Gemini and local engine
-VERIFIED_DRISHTI_GROUND_TRUTH = """
-VERIFIED DRISHTI PROJECT CONTEXT (DO NOT ALTER FACTUAL VALUES):
+VERIFIED_NETCAM_GROUND_TRUTH = """
+VERIFIED NETCAM PROJECT CONTEXT (DO NOT ALTER FACTUAL VALUES):
 - Project: Smart India Hackathon (SIH) 2026, Problem Statement 26127.
 - Organization: Bharat Electronics Limited (BEL) / Ministry of Smart Cities.
-- System Title: DRISHTI — City-Wide Visual Intelligence for Vehicle Tracking & Urban Mobility Analysis.
+- System Title: NETCAM — City-Wide Visual Intelligence for Vehicle Tracking & Urban Mobility Analysis.
 - Verified Benchmarks:
   * Exact Match OCR Accuracy: 90.97% (131/144 verified plate crops on real Asansol CCTV feeds).
   * Character-Level Accuracy: 98.27%.
@@ -136,21 +136,21 @@ class SessionHistoryManager:
 
 
 # =============================================================================
-# MAIN DRISHTI-GPT AI SERVICE
+# MAIN NETCAM-GPT AI SERVICE
 # =============================================================================
 
-class DrishtiGPTService:
+class NETCAMGPTService:
 
     @classmethod
     def process_query(cls, query: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Two-tiered query router:
         1. Classify intent:
-           - If DRISHTI-specific query (plate, speeding, blacklist, live junction traffic, signal, evidence):
-             -> Fetch verified real-time data from existing DRISHTI tools/database.
+           - If NETCAM-specific query (plate, speeding, blacklist, live junction traffic, signal, evidence):
+             -> Fetch verified real-time data from existing NETCAM tools/database.
              -> Optionally use Gemini to format the ground-truth result naturally.
            - If general, casual, conversational, architectural, or presentation query:
-             -> Route to Gemini conversational layer with DRISHTI system prompt and verified knowledge.
+             -> Route to Gemini conversational layer with NETCAM system prompt and verified knowledge.
              -> Fallback to local verified engine if Gemini is offline.
         """
         raw_query = query.strip()
@@ -171,7 +171,7 @@ class DrishtiGPTService:
         history = SessionHistoryManager.get_history(session_id)
 
         # ---------------------------------------------------------
-        # ROUTE 1: DRISHTI-SPECIFIC LIVE TOOLS / DATABASE QUERIES
+        # ROUTE 1: NETCAM-SPECIFIC LIVE TOOLS / DATABASE QUERIES
         # ---------------------------------------------------------
 
         # 1A. Vehicle Plate Search
@@ -410,7 +410,7 @@ class DrishtiGPTService:
                 unique_models.append(m)
 
         # Combine verified knowledge with extra ground truth if provided
-        system_instruction_text = f"{GEMINI_SYSTEM_PROMPT}\n\n{VERIFIED_DRISHTI_GROUND_TRUTH}"
+        system_instruction_text = f"{GEMINI_SYSTEM_PROMPT}\n\n{VERIFIED_NETCAM_GROUND_TRUTH}"
         if extra_grounding:
             system_instruction_text += f"\n\nACTUAL REAL-TIME VERIFIED SYSTEM DATA FOR CURRENT QUERY (DO NOT FABRICATE):\n{extra_grounding}"
 
@@ -464,7 +464,7 @@ class DrishtiGPTService:
         return None
 
     # =========================================================================
-    # DRISHTI LIVE DATA & TOOL HANDLERS
+    # NETCAM LIVE DATA & TOOL HANDLERS
     # =========================================================================
 
     @classmethod
@@ -848,7 +848,7 @@ class DrishtiGPTService:
 
         reply_md = (
             f"### 📑 Section 65B Indian Evidence Act Digital Certificate\n\n"
-            f"DRISHTI generates cryptographically tamper-evident certificates admissible in Indian law courts:\n\n"
+            f"NETCAM generates cryptographically tamper-evident certificates admissible in Indian law courts:\n\n"
             f"- **Target Plate**: **`{target_plate}`**\n"
             f"- **SHA-256 Frame Hash**: Validated against original CCTV storage\n"
             f"- **Timestamp Verification**: GPS NTP synchronized clock\n"
@@ -888,7 +888,7 @@ class DrishtiGPTService:
 
         reply_md = (
             "### 📷 Real-Time Live Webcam ANPR & Optical Text Scanner\n\n"
-            "DRISHTI includes an enterprise-grade **Live Webcam ANPR** system for real-time field testing and live jury demonstrations:\n\n"
+            "NETCAM includes an enterprise-grade **Live Webcam ANPR** system for real-time field testing and live jury demonstrations:\n\n"
             "- **Dual-Engine Architecture**:\n"
             "  * **Detection Engine**: Ultralytics YOLO license plate detector (`models/license_plate.pt`) for localization.\n"
             "  * **Recognition Engine**: PaddleOCR PP-OCRv6 for character-level precision and direct scene text extraction.\n"
@@ -925,8 +925,8 @@ class DrishtiGPTService:
     def _handle_new_features(cls, q: str) -> Dict[str, Any]:
         """Provide a comprehensive breakdown of all latest features and architecture upgrades."""
         reply_md = (
-            "### ✨ DRISHTI — Latest Features & Architectural Upgrades\n\n"
-            "DRISHTI platform me city-wide traffic intelligence aur police surveillance ke liye ye pramukh naye features shamil kiye gaye hain:\n\n"
+            "### ✨ NETCAM — Latest Features & Architectural Upgrades\n\n"
+            "NETCAM platform me city-wide traffic intelligence aur police surveillance ke liye ye pramukh naye features shamil kiye gaye hain:\n\n"
             "1. **📷 Real-Time Live Webcam ANPR Engine**:\n"
             "   - Laptop/system camera se live number plate aur text recognition.\n"
             "   - Dual-Engine: Ultralytics YOLO plate detector + PaddleOCR PP-OCRv6.\n"
@@ -947,7 +947,7 @@ class DrishtiGPTService:
             "   - Relative Congestion Index (RCI), queue dwell times, aur automated green-phase signal adjustments (+15s) peak bottlenecks clear karne ke liye."
         )
 
-        speech_text = "DRISHTI now features real-time Live Webcam ANPR, an optimized 2D GIS corridor map, VAHAN 4.0 RC integration, automated e-Challan, and Section 65B evidence certificates."
+        speech_text = "NETCAM now features real-time Live Webcam ANPR, an optimized 2D GIS corridor map, VAHAN 4.0 RC integration, automated e-Challan, and Section 65B evidence certificates."
 
         suggested_actions = [
             {"label": "📷 Launch Live Webcam ANPR", "action": "SWITCH_TAB", "payload": {"tab": "live_anpr"}},
@@ -970,8 +970,8 @@ class DrishtiGPTService:
     def _handle_map_features(cls, q: str) -> Dict[str, Any]:
         """Explain 2D Tactical GIS Map, Dual-Junction Corridor, and zero-lag trajectory."""
         reply_md = (
-            "### 🗺️ DRISHTI 2D Tactical GIS Map & Trajectory Corridor\n\n"
-            "DRISHTI ka GIS mapping module Asansol ke critical traffic corridor ko high-performance 2D GIS me render karta hai:\n\n"
+            "### 🗺️ NETCAM 2D Tactical GIS Map & Trajectory Corridor\n\n"
+            "NETCAM ka GIS mapping module Asansol ke critical traffic corridor ko high-performance 2D GIS me render karta hai:\n\n"
             "- **Dual Canonical Junctions**:\n"
             "  * **Junction A (Vivekananda Sarani)**: Entry Camera 01 aur Exit Camera 02.\n"
             "  * **Junction B (Kanyapur Link Road)**: Entry Camera 01 aur Exit Camera 02.\n"
@@ -981,7 +981,7 @@ class DrishtiGPTService:
             "- **Traffic Density Heatmap**: City-wide optical node congestion hotspots ko visual identify karne ke liye dynamic Heatmap toggle."
         )
 
-        speech_text = "DRISHTI map features an optimized 2D GIS corridor connecting Junction A and Junction B with smooth 60 FPS vehicle trajectory and clean camera popups."
+        speech_text = "NETCAM map features an optimized 2D GIS corridor connecting Junction A and Junction B with smooth 60 FPS vehicle trajectory and clean camera popups."
 
         suggested_actions = [
             {"label": "🗺️ Open GIS Route Map", "action": "SWITCH_TAB", "payload": {"tab": "surveillance"}},
@@ -1013,20 +1013,20 @@ class DrishtiGPTService:
         if re.search(r"\b(presentation|30 sec|30 second|pitch|demo me explain|jury|judges)\b", q):
             if "english" in q:
                 return (
-                    "### ⏱️ DRISHTI 30-Second Elevator Pitch (For Jury/Evaluation)\n\n"
-                    "\"**DRISHTI** is an enterprise-grade AI platform built for SIH Problem Statement 26127. "
+                    "### ⏱️ NETCAM 30-Second Elevator Pitch (For Jury/Evaluation)\n\n"
+                    "\"**NETCAM** is an enterprise-grade AI platform built for SIH Problem Statement 26127. "
                     "In modern cities, suspect vehicles evade tracking across blind-spot cameras. "
-                    "DRISHTI solves this by linking multiple 1080p CCTV cameras through high-accuracy ANPR (90.97% exact match) "
+                    "NETCAM solves this by linking multiple 1080p CCTV cameras through high-accuracy ANPR (90.97% exact match) "
                     "and reconstructing the complete cross-camera trajectory with physically verified Haversine speed in real-time. "
                     "It features **Real-Time Live Webcam ANPR** (dual-engine YOLOv8 + PaddleOCR with auto-mirror compensation), "
                     "a streamlined **2D GIS Corridor Map** (Junction A to B at 60 FPS), MoRTH VAHAN 4.0 RC details, and Section 65B legal evidence certificates!\""
                 )
             else:
                 return (
-                    "### ⏱️ DRISHTI 30-Second Presentation Pitch (Hinglish / Hindi)\n\n"
-                    "\"**DRISHTI** ek city-wide AI platform hai jo smart cities ke traffic aur police surveillance ke liye banaya gaya hai. "
+                    "### ⏱️ NETCAM 30-Second Presentation Pitch (Hinglish / Hindi)\n\n"
+                    "\"**NETCAM** ek city-wide AI platform hai jo smart cities ke traffic aur police surveillance ke liye banaya gaya hai. "
                     "Aksar suspect vehicles ek camera se doosre camera ke beech gayab ho jaate hain. "
-                    "DRISHTI **YOLOv8 aur high-accuracy OCR (90.97% exact match)** se multiple CCTV feeds ko connect karta hai, "
+                    "NETCAM **YOLOv8 aur high-accuracy OCR (90.97% exact match)** se multiple CCTV feeds ko connect karta hai, "
                     "vehicle ka real-time **2D GIS trajectory route chart karta hai**, aur Haversine formula se **exact physical speed** measure karta hai. "
                     "Isme live laptop camera se **Live Webcam ANPR** testing, VAHAN 4.0 RC details, automated e-Challan, aur court ke liye **Section 65B Evidence Certificate** sab kuch 1-click me ready hai!\""
                 )
@@ -1034,8 +1034,8 @@ class DrishtiGPTService:
         # 1B. What's New / New Features ("Naye features kya hain?")
         if re.search(r"\b(naye features?|naya feature|new features?|new updates?|kya naya hai|latest features?|updates? kya hai|kya naye features?|recent changes?|what's new|features? batao|naye changes?|features? list)\b", q):
             return (
-                "### ✨ DRISHTI — Naye Features & Updates\n\n"
-                "DRISHTI me haal hi me shamil kiye gaye sabse latest aur powerful features ye hain:\n\n"
+                "### ✨ NETCAM — Naye Features & Updates\n\n"
+                "NETCAM me haal hi me shamil kiye gaye sabse latest aur powerful features ye hain:\n\n"
                 "1. **📷 Real-Time Live Webcam ANPR**:\n"
                 "   - System/laptop camera se live number plate aur text scanning.\n"
                 "   - Dual-engine: YOLOv8 plate detection + PaddleOCR PP-OCRv6.\n"
@@ -1067,8 +1067,8 @@ class DrishtiGPTService:
         # 1D. 2D GIS Map & Junctions ("Map features kya hain?")
         if re.search(r"\b(map features?|2d map|gis map|map updates?|map kaise|junction a aur b|junction pins?|trajectory animation|map me kya hai|map explain)\b", q):
             return (
-                "### 🗺️ DRISHTI 2D Tactical GIS Map & Trajectory Corridor\n\n"
-                "DRISHTI ka GIS mapping module Asansol ke critical traffic corridor ko high-performance 2D GIS me render karta hai:\n\n"
+                "### 🗺️ NETCAM 2D Tactical GIS Map & Trajectory Corridor\n\n"
+                "NETCAM ka GIS mapping module Asansol ke critical traffic corridor ko high-performance 2D GIS me render karta hai:\n\n"
                 "- **2 Canonical Junctions**: **Junction A** (Vivekananda Sarani) aur **Junction B** (Kanyapur Link Road).\n"
                 "- **Smooth 60 FPS Trajectory**: Junction A aur B ke beech physically calculated speed (Haversine formula) ke saath vehicle smooth animate hota hai.\n"
                 "- **Clean Text-Only Pins**: Junction pins par click karne par bina kisi lag ke dono associated 1080p cameras ke naam aur status show hote hain.\n"
@@ -1079,7 +1079,7 @@ class DrishtiGPTService:
         if re.search(r"\b(english me|in english)\b", q):
             return (
                 "Sure! Switching to English.\n\n"
-                "**DRISHTI** is an enterprise visual intelligence and multi-camera ANPR tracking system. "
+                "**NETCAM** is an enterprise visual intelligence and multi-camera ANPR tracking system. "
                 "It monitors 4 CCTV streams across Vivekananda Sarani and Kanyapur Link Road, delivering 90.97% exact match OCR accuracy and real-time GIS trajectory reconstruction. "
                 "What specific aspect would you like to explore next — our computer vision pipeline, speed analytics, or vehicle search?"
             )
@@ -1087,7 +1087,7 @@ class DrishtiGPTService:
         if re.search(r"\b(hinglish me|hindi me)\b", q):
             return (
                 "Haan bilkul! Ab main Hinglish me baat karunga.\n\n"
-                "**DRISHTI** hamara smart city visual intelligence platform hai jo Asansol ke 2 junctions (Vivekananda Sarani aur Kanyapur Link Road) ke 4 CCTV cameras ko live monitor karta hai. "
+                "**NETCAM** hamara smart city visual intelligence platform hai jo Asansol ke 2 junctions (Vivekananda Sarani aur Kanyapur Link Road) ke 4 CCTV cameras ko live monitor karta hai. "
                 "Isme YOLOv8 se vehicle detect hota hai aur 90.97% OCR accuracy se plate read hoti hai. "
                 "Aap mujhse architecture, accuracy, ya kisi bhi gaadi ke tracking ke bare me pooch sakte ho!"
             )
@@ -1095,8 +1095,8 @@ class DrishtiGPTService:
         # 3. How ANPR / OCR works ("ANPR kaise kaam karta hai?")
         if re.search(r"\b(anpr kaise|how anpr works|ocr kaise|plate detection|anpr)\b", q):
             return (
-                "### 🔍 ANPR & OCR Pipeline in DRISHTI\n\n"
-                "DRISHTI me Automatic Number Plate Recognition (ANPR) ek multi-stage computer vision process hai:\n\n"
+                "### 🔍 ANPR & OCR Pipeline in NETCAM\n\n"
+                "NETCAM me Automatic Number Plate Recognition (ANPR) ek multi-stage computer vision process hai:\n\n"
                 "1. **Vehicle & Plate Detection**: YOLOv8 model vehicle bounding box aur plate region ko 221 ms me localize karta hai.\n"
                 "2. **Image Preprocessing & Enhancement**: Plate crop par 3 filters lagte hain:\n"
                 "   - **CLAHE** (Contrast Limited Adaptive Histogram Equalization) low-light aur glare fix karne ke liye.\n"
@@ -1111,7 +1111,7 @@ class DrishtiGPTService:
         if re.search(r"\b(track hota|tracking kaise|cross camera|trajectory kaise|how does tracking work)\b", q):
             return (
                 "### 📍 Cross-Camera Trajectory Tracking Explained\n\n"
-                "Jab koi gaadi ek camera se nikal kar doosre camera tak jati hai, to DRISHTI usse aise track karta hai:\n\n"
+                "Jab koi gaadi ek camera se nikal kar doosre camera tak jati hai, to NETCAM usse aise track karta hai:\n\n"
                 "1. **Primary Identity**: Har vehicle ka primary key uska normalized license plate string hota hai (e.g. `WB37E1275`).\n"
                 "2. **Spatio-Temporal Correlation**: Camera 01 (Vivekananda Sarani) par detection timestamp $T_1$ log hota hai. Jab wahi gaadi Camera 03 ya 04 (Kanyapur Link Road) par $T_2$ par aati hai, system plate match karke dono atomic observations ko link kar deta hai.\n"
                 "3. **Physics-based Speed**: Dono cameras ke verified GPS coordinates ke beech **Haversine formula** se distance nikala jata hai (~408 meters). Distance / Time se exact speed (km/h) calculate hoti hai.\n"
@@ -1121,7 +1121,7 @@ class DrishtiGPTService:
         # 5. Architecture Explanation ("Architecture explain karo")
         if re.search(r"\b(architecture|pipeline|flow|system design|data flow)\b", q):
             return (
-                "### 🏗️ DRISHTI System Architecture & Pipeline\n\n"
+                "### 🏗️ NETCAM System Architecture & Pipeline\n\n"
                 "The end-to-end processing pipeline runs in **6 high-performance stages**:\n\n"
                 "```\n"
                 "CCTV Stream (4 Nodes) ➔ 3x Frame Sampling ➔ YOLOv8 Detection (221 ms)\n"
@@ -1151,11 +1151,11 @@ class DrishtiGPTService:
                 "- **Automated Test Suites**: **39 / 39 Passing** (100% test pass rate)."
             )
 
-        # 7. What is DRISHTI ("DRISHTI kya hai?")
-        if re.search(r"\b(what is drishti|drishti kya hai|project kya hai|about drishti)\b", q):
+        # 7. What is NETCAM ("NETCAM kya hai?")
+        if re.search(r"\b(what is NETCAM|NETCAM kya hai|project kya hai|about NETCAM)\b", q):
             return (
-                "### 🏛️ About DRISHTI (SIH 2026 — PS 26127)\n\n"
-                "**DRISHTI** is an enterprise-grade **City-Wide Visual Intelligence & Vehicle Tracking Platform** built for smart cities.\n\n"
+                "### 🏛️ About NETCAM (SIH 2026 — PS 26127)\n\n"
+                "**NETCAM** is an enterprise-grade **City-Wide Visual Intelligence & Vehicle Tracking Platform** built for smart cities.\n\n"
                 "**Key Pillars:**\n"
                 "1. **Multi-Camera Vehicle Tracking**: Tracks vehicles seamlessly across 4 CCTV cameras without losing identity, using temporal license plate normalization.\n"
                 "2. **State-of-the-Art ANPR**: **90.97% Exact Match** and **98.27% Character-Level Accuracy** with CLAHE + Bilateral Denoising + Unsharp Masking.\n"
@@ -1168,9 +1168,9 @@ class DrishtiGPTService:
         # 8. Casual Acknowledgment ("Samajh gaya 😂")
         if re.search(r"\b(samajh gaya|got it|understands|cool|nice|understood|arre waah)\b", q):
             ack_options = [
-                "Badiya! Koi aur question ho DRISHTI ke architecture, ANPR pipeline, ya kisi car ko trace karne ke bare me, to pooch sakte ho! 😊",
+                "Badiya! Koi aur question ho NETCAM ke architecture, ANPR pipeline, ya kisi car ko trace karne ke bare me, to pooch sakte ho! 😊",
                 "Great! Let me know if you want to inspect live traffic metrics or search any vehicle on the map.",
-                "Awesome! DRISHTI copilot hamesha ready hai. Aap presentation questions ya live tracking kuch bhi test kar sakte ho."
+                "Awesome! NETCAM copilot hamesha ready hai. Aap presentation questions ya live tracking kuch bhi test kar sakte ho."
             ]
             return random.choice(ack_options)
 
@@ -1185,13 +1185,13 @@ class DrishtiGPTService:
         # 11. Generic Contextual Fallback
         return (
             f"Aapne poocha: **\"{raw}\"**.\n\n"
-            f"DRISHTI platform Asansol ke 4 CCTV cameras (Vivekananda Sarani & Kanyapur Link Road) ko monitor karta hai. "
+            f"NETCAM platform Asansol ke 4 CCTV cameras (Vivekananda Sarani & Kanyapur Link Road) ko monitor karta hai. "
             f"Aap mujhse iske **architecture, 90.97% OCR accuracy, YOLOv8 pipeline, Haversine speed calculation**, ya kisi vehicle plate (jaise `WB37E1275`) ko trace karne ke bare me pooch sakte ho!"
         )
 
     @classmethod
     def _wrap_conversational_response(cls, reply_text: str, intent_name: str = "CHAT_CONVERSATION") -> Dict[str, Any]:
-        """Wrap natural conversational reply into standard DRISHTI copilot structure."""
+        """Wrap natural conversational reply into standard NETCAM copilot structure."""
         # Create speech synthesis snippet
         speech = reply_text.replace("#", "").replace("*", "").replace("`", "").replace("\n", " ")[:180].strip()
 
@@ -1206,7 +1206,7 @@ class DrishtiGPTService:
                 "✨ Naye features kya hain?",
                 "📷 Live ANPR open karo",
                 "🗺️ 2D GIS Corridor",
-                "DRISHTI kya hai?",
+                "NETCAM kya hai?",
                 "Accuracy kitni hai?",
                 "Architecture explain karo",
             ]
@@ -1216,10 +1216,10 @@ class DrishtiGPTService:
     def get_contextual_suggestions(cls) -> List[Dict[str, str]]:
         """Return dynamic prompt suggestions based on current city state."""
         return [
-            {"label": "✨ Naye Features", "query": "DRISHTI ke naye features kya hain?"},
+            {"label": "✨ Naye Features", "query": "NETCAM ke naye features kya hain?"},
             {"label": "📷 Live Webcam ANPR", "query": "Live ANPR kaise kaam karta hai?"},
             {"label": "🗺️ 2D GIS Corridor", "query": "GIS map features explain karo"},
-            {"label": "💬 DRISHTI Kya Hai?", "query": "DRISHTI kya hai?"},
+            {"label": "💬 NETCAM Kya Hai?", "query": "NETCAM kya hai?"},
             {"label": "🏗️ Architecture", "query": "Architecture explain karo"},
             {"label": "🎯 Accuracy Benchmark", "query": "Accuracy kitni hai?"},
             {"label": "🚦 J1 Traffic Status", "query": "J1 ka traffic status kya hai?"},

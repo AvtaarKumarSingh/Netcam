@@ -1,7 +1,7 @@
 /**
  * frontend/src/services/api.js
  *
- * Backend-first API client for DRISHTI Traffic Intelligence System.
+ * Backend-first API client for NETCAM Traffic Intelligence System.
  * All data flows from the backend (which reads from detections.json).
  * Local JSON fallback is used only when backend is offline.
  */
@@ -13,7 +13,7 @@
 /**
  * Resolves the active backend API base URL dynamically.
  * Priority:
- * 1. Runtime override saved in browser localStorage ("DRISHTI_BACKEND_URL")
+ * 1. Runtime override saved in browser localStorage ("NETCAM_BACKEND_URL")
  * 2. Build-time Vite environment variable (import.meta.env.VITE_API_BASE_URL)
  * 3. Localhost development (localhost or 127.0.0.1 -> :8000)
  * 4. Production fallback: "" (relative request)
@@ -21,7 +21,7 @@
 export function getApiBase() {
   if (typeof window !== "undefined") {
     try {
-      const stored = localStorage.getItem("DRISHTI_BACKEND_URL");
+      const stored = localStorage.getItem("NETCAM_BACKEND_URL");
       if (stored && stored.trim()) {
         return stored.trim().replace(/\/+$/, "");
       }
@@ -41,20 +41,20 @@ export function getApiBase() {
   }
 
   // Production default connected to Railway cloud backend
-  return "https://drishti-production-8365.up.railway.app";
+  return "https://NETCAM-production-8365.up.railway.app";
 }
 
 export function setApiBase(url) {
   if (typeof window !== "undefined") {
     try {
       if (!url || !url.trim()) {
-        localStorage.removeItem("DRISHTI_BACKEND_URL");
+        localStorage.removeItem("NETCAM_BACKEND_URL");
       } else {
         let clean = url.trim().replace(/\/+$/, "");
         if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
           clean = "https://" + clean;
         }
-        localStorage.setItem("DRISHTI_BACKEND_URL", clean);
+        localStorage.setItem("NETCAM_BACKEND_URL", clean);
       }
     } catch (_) {}
   }
@@ -1044,9 +1044,9 @@ export const api = {
   },
 
   /* =========================================================
-     DRISHTI-GPT AI COPILOT
+     NETCAM-GPT AI COPILOT
   ========================================================= */
-  async askDrishtiGpt(query, context = null) {
+  async askNETCAMGpt(query, context = null) {
     try {
       return await request("/api/v1/copilot/query", {
         method: "POST",
@@ -1054,17 +1054,17 @@ export const api = {
         body: JSON.stringify({ query, context }),
       });
     } catch (error) {
-      console.warn("[API] askDrishtiGpt failed:", error);
+      console.warn("[API] askNETCAMGpt failed:", error);
       throw error;
     }
   },
 
-  async getDrishtiGptSuggestions() {
+  async getNETCAMGptSuggestions() {
     try {
       const res = await request("/api/v1/copilot/suggestions");
       return res?.suggestions || [];
     } catch (error) {
-      console.warn("[API] getDrishtiGptSuggestions failed:", error);
+      console.warn("[API] getNETCAMGptSuggestions failed:", error);
       return [];
     }
   },
@@ -1177,4 +1177,4 @@ export function getCanonicalJunctionName(juncId, fallback) {
 api.getApiBase = getApiBase;
 api.setApiBase = setApiBase;
 
-console.info("[API] Backend-first API client initialized. Base:", getApiBase() || "(proxy/relative)");
+console.info("[API] Backend-first API client initialized. Base:", getApiBase() || "(proxy/relative)");

@@ -7,7 +7,7 @@ Processes any user-supplied or evaluator-supplied CCTV video file:
 - YOLO11 Vehicle Detection (Cars, Motorcycles, Buses, Trucks)
 - ByteTrack Multi-Object Spatial-Temporal Association
 - License Plate Localization & PaddleOCR ANPR Recognition
-- Exports structured detection records compatible with DRISHTI Trajectory Engine.
+- Exports structured detection records compatible with NETCAM Trajectory Engine.
 
 Usage:
     python scripts/infer_single_camera.py --video path/to/video.mp4 --camera-id camera_test_01
@@ -42,7 +42,7 @@ def run_inference(
     output_json: str = None
 ):
     print("=" * 65)
-    print("  DRISHTI MULTI-CAMERA ANPR LIVE INFERENCE PIPELINE")
+    print("  NETCAM MULTI-CAMERA ANPR LIVE INFERENCE PIPELINE")
     print("  Smart India Hackathon 2026 - Bharat Electronics Limited")
     print("=" * 65)
     print(f"[*] Input Video Stream : {video_path}")
@@ -205,7 +205,7 @@ def run_inference(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Live Video Inference for DRISHTI ANPR Pipeline")
+    parser = argparse.ArgumentParser(description="Live Video Inference for NETCAM ANPR Pipeline")
     parser.add_argument("--video", "-v", type=str, required=True, help="Path to input video file")
     parser.add_argument("--camera-id", "-c", type=str, default="test_camera_01", help="Camera node ID")
     parser.add_argument("--junction-id", "-j", type=str, default="junction_A", help="Junction ID")

@@ -144,7 +144,7 @@ export function TrafficAnalyticsPage({ analytics, onBackToSurveillance }) {
     downloadAnchor.setAttribute("href", dataStr);
     downloadAnchor.setAttribute(
       "download",
-      `drishti_traffic_analytics_${new Date().toISOString().slice(0, 10)}.json`
+      `NETCAM_traffic_analytics_${new Date().toISOString().slice(0, 10)}.json`
     );
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
@@ -763,7 +763,7 @@ export function TrafficAnalyticsPage({ analytics, onBackToSurveillance }) {
                   <td style={{ padding: "12px 14px", fontWeight: 700 }}>
                     {od.origin_name || "Junction A (South Gate)"}
                   </td>
-                  <td style={{ textAlign: "center", color: "var(--drishti-blue)" }}>
+                  <td style={{ textAlign: "center", color: "var(--NETCAM-blue)" }}>
                     <ArrowRight size={15} />
                   </td>
                   <td style={{ padding: "12px 14px", fontWeight: 700 }}>

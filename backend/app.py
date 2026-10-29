@@ -1119,7 +1119,7 @@ def get_system_validation():
 
     return {
         "status": "ok",
-        "system_name": "DRISHTI — Traffic Intelligence Platform",
+        "system_name": "NETCAM — Traffic Intelligence Platform",
         "sih_problem_statement": "26127 — Multi-Camera ANPR Trajectory Tracking & Urban Traffic Analytics",
         "evaluated_at": datetime.now(timezone.utc).isoformat(),
         "anpr_accuracy": anpr_data,
@@ -1579,7 +1579,7 @@ def dashboard_overview():
     wl = watchlist_service.get_watchlist()
     return {
         "system": {
-            "title": "DRISHTI City-Wide Traffic Intelligence System",
+            "title": "NETCAM City-Wide Traffic Intelligence System",
             "status": "ONLINE",
             "cameras_online": len(cameras),
             "version": "3.5.0",
@@ -1636,7 +1636,7 @@ def get_system_health_summary():
     db_ok = is_db_connected()
     cams = get_cameras_dict()
     return {
-        "platform": "DRISHTI City-Wide Visual Intelligence",
+        "platform": "NETCAM City-Wide Visual Intelligence",
         "problem_statement": "SIH 2026 - PS 26127 (Bharat Electronics Limited)",
         "compliance_status": "ALL_15_TECHNICAL_CAPABILITIES_ACTIVE",
         "empirical_ocr_accuracy": "90.97%",
@@ -1651,35 +1651,35 @@ def get_system_health_summary():
 
 
 # ============================================================
-# DRISHTI-GPT AI COPILOT ENDPOINTS
+# NETCAM-GPT AI COPILOT ENDPOINTS
 # ============================================================
 
 @app.post("/api/v1/copilot/query")
 def copilot_query(request_body: CopilotQueryRequest):
     """
-    DRISHTI-GPT AI Conversational Forensic & Smart City Copilot.
+    NETCAM-GPT AI Conversational Forensic & Smart City Copilot.
     Natural language query processing with multi-intent classification,
     speech synthesis text, and actionable UI execution cards.
     """
     try:
-        from backend.services.drishti_gpt_service import DrishtiGPTService
-        response = DrishtiGPTService.process_query(request_body.query, request_body.context)
+        from backend.services.NETCAM_gpt_service import NETCAMGPTService
+        response = NETCAMGPTService.process_query(request_body.query, request_body.context)
         return JSONResponse(status_code=status.HTTP_200_OK, content=response)
     except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"DRISHTI-GPT copilot execution error: {exc}",
+            detail=f"NETCAM-GPT copilot execution error: {exc}",
         )
 
 
 @app.get("/api/v1/copilot/suggestions")
 def copilot_suggestions():
     """
-    Return dynamic contextual prompt suggestions for DRISHTI-GPT copilot.
+    Return dynamic contextual prompt suggestions for NETCAM-GPT copilot.
     """
     try:
-        from backend.services.drishti_gpt_service import DrishtiGPTService
-        suggestions = DrishtiGPTService.get_contextual_suggestions()
+        from backend.services.NETCAM_gpt_service import NETCAMGPTService
+        suggestions = NETCAMGPTService.get_contextual_suggestions()
         return JSONResponse(status_code=status.HTTP_200_OK, content={"suggestions": suggestions})
     except Exception as exc:
         raise HTTPException(
@@ -1696,7 +1696,7 @@ def scan_live_frame(req: LiveAnprScanRequest):
     """
     Real-Time Live Laptop Webcam ANPR & Scene Text OCR Scanner.
     Processes a video frame snapshot from browser camera using YOLO plate detection + PaddleOCR.
-    Enriches with Indian RTO plate formatting, VAHAN RC data, and DRISHTI Blacklist checks.
+    Enriches with Indian RTO plate formatting, VAHAN RC data, and NETCAM Blacklist checks.
     """
     try:
         from backend.services.live_anpr_service import live_anpr_service

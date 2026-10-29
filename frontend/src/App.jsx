@@ -13,7 +13,7 @@ import { TrafficAnalyticsPage } from "./components/TrafficAnalyticsPage";
 import { SystemValidationPage } from "./components/SystemValidationPage";
 import { EvidencePlaybackModal } from "./components/EvidencePlaybackModal";
 import { FullMapModal } from "./components/FullMapModal";
-import { DrishtiGptCopilot } from "./components/DrishtiGptCopilot";
+import { NETCAMGptCopilot } from "./components/NETCAMGptCopilot";
 import { LiveWebcamAnpr } from "./components/LiveWebcamAnpr";
 import {
   api,
@@ -213,7 +213,7 @@ export default function App() {
     return () => clearInterval(pollInterval);
   }, []);
 
-  /* KEYBOARD SHORTCUT: CTRL + K TO TOGGLE DRISHTI-GPT */
+  /* KEYBOARD SHORTCUT: CTRL + K TO TOGGLE NETCAM-GPT */
   useEffect(() => {
     const handleGlobalKeyDown = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
@@ -715,8 +715,8 @@ export default function App() {
         analytics={analytics}
       />
 
-      {/* DRISHTI-GPT AI FORENSIC COPILOT HUD */}
-      <DrishtiGptCopilot
+      {/* NETCAM-GPT AI FORENSIC COPILOT HUD */}
+      <NETCAMGptCopilot
         isOpen={isCopilotOpen}
         onClose={() => setIsCopilotOpen(false)}
         onOpen={() => setIsCopilotOpen(true)}
@@ -767,7 +767,7 @@ export default function App() {
       {/* FOOTER */}
       <footer className="command-footer font-mono">
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>DRISHTI</span>
+          <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>NETCAM</span>
           <span>•</span>
           <span>CITY-WIDE VISUAL INTELLIGENCE FOR VEHICLE TRACKING & MOBILITY ANALYSIS</span>
           <span>•</span>

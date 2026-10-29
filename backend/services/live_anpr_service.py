@@ -1,7 +1,7 @@
 """
 backend/services/live_anpr_service.py
 
-DRISHTI — Real-Time Live Laptop Webcam ANPR & Optical Text Recognition Service.
+NETCAM — Real-Time Live Laptop Webcam ANPR & Optical Text Recognition Service.
 Designed for SIH 2026 / PS 26127.
 
 Features:
@@ -525,7 +525,7 @@ class LiveANPRService:
                             "matched": True,
                             "plate": entry.get("plate"),
                             "status": entry.get("status", "blacklisted"),
-                            "reason": entry.get("reason", "Flagged in DRISHTI Watchlist"),
+                            "reason": entry.get("reason", "Flagged in NETCAM Watchlist"),
                             "priority": entry.get("priority", "HIGH"),
                             "added_at": entry.get("added_at"),
                             "alert_level": "CRITICAL" if entry.get("status") == "blacklisted" else "MONITORED",

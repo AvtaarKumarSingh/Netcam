@@ -113,7 +113,7 @@ def get_cameras_dict() -> Dict[str, Dict[str, Any]]:
         vpath = PROJECT_ROOT / cam.get("video_path", "")
         remote_url = os.getenv(f"REMOTE_VIDEO_{cam_id.upper()}", "").strip() or cam.get("remote_video_url", "").strip()
         if not remote_url:
-            release_base = os.getenv("REMOTE_VIDEO_BASE_URL", "https://github.com/Harshsahu0702/DRISHTI/releases/download/v1.0-assets").rstrip("/")
+            release_base = os.getenv("REMOTE_VIDEO_BASE_URL", "https://github.com/Harshsahu0702/NETCAM/releases/download/v1.0-assets").rstrip("/")
             remote_url = f"{release_base}/{cam_id}.mp4"
 
         item = {

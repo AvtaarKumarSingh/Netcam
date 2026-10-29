@@ -116,7 +116,7 @@ export function GlobalRegistry({ vehicles, onSelectVehicle, onOpenDossier, selec
           </p>
         </div>
         <div style={{ fontSize: "12px", fontWeight: "700", color: "var(--text-muted)" }}>
-          ACTIVE VEHICLES: <span className="font-mono" style={{ color: "var(--drishti-blue)" }}>{filteredVehicles.length}</span>
+          ACTIVE VEHICLES: <span className="font-mono" style={{ color: "var(--NETCAM-blue)" }}>{filteredVehicles.length}</span>
           <span style={{ color: "var(--text-dim)", marginLeft: "4px" }}>/ {plateOnlyVehicles.length} Total Plates</span>
         </div>
       </div>
